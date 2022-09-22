@@ -80,7 +80,7 @@ body{
     border-radius: 50%;
     box-sizing: border-box;
     opacity: 0;
-    transition: all 200ms;
+    transition: opacity 200ms;
 }
 
 .link-github{background: url(../png/github.png) center/cover;}

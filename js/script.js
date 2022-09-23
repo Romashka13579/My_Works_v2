@@ -47,11 +47,34 @@ LinksProfiles.forEach(LinkProfile => {
 
 function Links(LinksProfiles, i, a){
     if(a == 1){
-        console.log(i);
         LinksProfiles[i].style.opacity = 1;
     }
     else if(a == 0){
-        console.log(i);
         LinksProfiles[i].style.opacity = 0;
     }
 }
+
+var headerBotBtn = document.querySelector('.rectangles');
+var headerBottomOverflow = document.querySelector('.header-bottom-overflow');
+var headerBottom = document.querySelector('.header-bottom');
+
+var headerclicked = 1;
+
+headerBotBtn.addEventListener('click', () => {
+    if(headerclicked == 1){
+        headerclicked = 0;
+        headerBottomOverflow.style.display = "block";
+        setTimeout(() => {
+            headerBottomOverflow.style.height = "100px";
+            headerBottom.style.top = "0px";
+        }, 10);
+    }
+    else if(headerclicked == 0){
+        headerclicked = 1;
+        headerBottom.style.top = "-100px";
+        headerBottomOverflow.style.height = "0px";
+        setTimeout(() => {
+            Links(LinksProfiles, i, 0);
+        }, 10);
+    }
+});

@@ -61,6 +61,7 @@ body{
 .header-right{
     align-items: center;
     position: relative;
+    height: 50px;
     right: 0px;
     display: flex;
     gap: 20px;
@@ -112,6 +113,7 @@ body{
 .fa-arrow-up{
     font-size: 40px;
     transition: 500ms;
+    transform: matrix(-1.00,0.00,-0.00,-1.00,0,0);
 }
 
 .rectangles{
@@ -176,20 +178,18 @@ body{
 
 .dropdown-myprojects-menu-overflow{
     position: absolute;
-    margin-top: 165px;
-    left: 100px;
+    display: none;
+    margin-top: 185px;
     background: #D9D9D9;
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
-}
-
-.dropdown-myprojects-menu{
-    border-radius: 20px;
-    overflow: hidden;
+    opacity: 0;
+    transition: all 750ms;
 }
 
 .myprojects-menu{
     display: flex;
+    align-items: center;
     gap: 20px;
     padding: 6px 20px;
     background: #D9D9D9;
@@ -203,6 +203,19 @@ body{
     font-weight: 700;
     font-size: 26px;
     color: #000000;
+}
+
+.myprojects-menu:hover{
+    background: #B0B0B0;
+}
+
+.myprojects-menu:hover > .myprojects-menu-txt{
+    color: #3A666C;
+}
+
+.myprojects-menu-line{
+    height: 1.1px;
+    background: #969696;
 }
 
 .myprojects-menu-icon{

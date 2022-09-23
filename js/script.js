@@ -73,7 +73,7 @@ headerBotBtn.addEventListener('click', () => {
     }
     else if(headerclicked == 0){
         headerclicked = 1;
-        faArrowUp.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
+        faArrowUp.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
         headerBottom.style.top = "-80px";
         headerBottomOverflow.style.height = "0px";
         setTimeout(() => {

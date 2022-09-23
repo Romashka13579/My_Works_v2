@@ -71,6 +71,7 @@ body{
     padding: 0px;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .fa-link{
@@ -97,6 +98,7 @@ body{
     box-sizing: border-box;
     opacity: 0;
     transition: opacity 200ms;
+    cursor: pointer;
 }
 
 .link-github{background: url(../png/github.png) center/cover;}
@@ -113,6 +115,7 @@ body{
 .fa-arrow-up{
     font-size: 40px;
     transition: 500ms;
+    cursor: pointer;
     transform: matrix(-1.00,0.00,-0.00,-1.00,0,0);
 }
 
@@ -149,6 +152,7 @@ body{
     border: none;
     background: none;
     padding: 0px;
+    cursor: pointer;
 }
 
 .dropdownorlink-txt,
@@ -189,10 +193,13 @@ body{
 
 .myprojects-menu{
     display: flex;
+    outline: none;
+    border: none;
     align-items: center;
     gap: 20px;
     padding: 6px 20px;
     background: #D9D9D9;
+    cursor: pointer;
 }
 
 .myprojects-menu-txt{

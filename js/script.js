@@ -55,6 +55,7 @@ function Links(LinksProfiles, i, a){
 }
 
 var headerBotBtn = document.querySelector('.rectangles');
+var faArrowUp = document.querySelector('.fa-arrow-up');
 var headerBottomOverflow = document.querySelector('.header-bottom-overflow');
 var headerBottom = document.querySelector('.header-bottom');
 
@@ -63,15 +64,17 @@ var headerclicked = 1;
 headerBotBtn.addEventListener('click', () => {
     if(headerclicked == 1){
         headerclicked = 0;
+        faArrowUp.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
         headerBottomOverflow.style.display = "block";
         setTimeout(() => {
-            headerBottomOverflow.style.height = "100px";
+            headerBottomOverflow.style.height = "80px";
             headerBottom.style.top = "0px";
         }, 10);
     }
     else if(headerclicked == 0){
         headerclicked = 1;
-        headerBottom.style.top = "-100px";
+        faArrowUp.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
+        headerBottom.style.top = "-80px";
         headerBottomOverflow.style.height = "0px";
         setTimeout(() => {
             Links(LinksProfiles, i, 0);

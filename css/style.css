@@ -126,6 +126,7 @@ body{
     overflow: hidden;
     transition: 750ms;
 }
+
 .header-bottom{
     position: relative;
     display: flex;
@@ -142,6 +143,10 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0px;
 }
 
 .dropdownorlink-txt,
@@ -161,10 +166,53 @@ body{
     -webkit-transform:matrix(1.00,0.00,0.00,-1.00,0,0);
 }
 
-.dropdownorlink:hover > .dropdownorlink-txt,
-.dropdownorlink:hover > .fa-chevron-up{color: #40939E;}
-.dropdownorlink:hover > .fa-chevron-up{
+.dropdownorlink:focus > .dropdownorlink-txt,
+.dropdownorlink:focus > .fa-chevron-up{color: #40939E;}
+.dropdownorlink:focus > .fa-chevron-up{
     transform:matrix(-1.00,0.00,0.00,1.00,0,0);
     -ms-transform:matrix(-1.00,0.00,0.00,1.00,0,0);
     -webkit-transform:matrix(-1.00,0.00,0.00,1.00,0,0);
 }
+
+.dropdown-myprojects-menu-overflow{
+    position: absolute;
+    margin-top: 165px;
+    left: 100px;
+    background: #D9D9D9;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.dropdown-myprojects-menu{
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.myprojects-menu{
+    display: flex;
+    gap: 20px;
+    padding: 6px 20px;
+    background: #D9D9D9;
+}
+
+.myprojects-menu-txt{
+    width: 100px;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    color: #000000;
+}
+
+.myprojects-menu-icon{
+    width: 40px;
+    height: 40px;
+}
+
+.menu-icon-1{background: url(../png/css3.png) center/cover;}
+.menu-icon-2{background: url(../png/html.png) center/cover;}
+.menu-icon-3{background: url(../png/javascript.png) center/cover;}
+.menu-icon-4{background: url(../png/c.png) center/cover;}
+.menu-icon-5{background: url(../png/csharp.png) center/cover;}
+.menu-icon-6{background: url(../png/python.png) center/cover;}

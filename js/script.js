@@ -58,6 +58,7 @@ var headerBotBtn = document.querySelector('.rectangles');
 var faArrowUp = document.querySelector('.fa-arrow-up');
 var headerBottomOverflow = document.querySelector('.header-bottom-overflow');
 var headerBottom = document.querySelector('.header-bottom');
+var main = document.querySelector('.main');
 
 var headerclicked = 1;
 
@@ -67,12 +68,14 @@ headerBotBtn.addEventListener('click', () => {
         faArrowUp.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
         headerBottomOverflow.style.display = "block";
         setTimeout(() => {
+            main.style.paddingTop = "200px"
             headerBottomOverflow.style.height = "80px";
             headerBottom.style.top = "0px";
         }, 10);
     }
     else if(headerclicked == 0){
         headerclicked = 1;
+        main.style.paddingTop = "120px"
         faArrowUp.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
         headerBottom.style.top = "-80px";
         headerBottomOverflow.style.height = "0px";
@@ -107,5 +110,15 @@ dropdownBtn.addEventListener('focusout', () => {
         if(dropdownMyprojectsMenu.style.marginTop == "185px"){
             dropdownMyprojectsMenu.style.display = "none";
         }
+    });
+});
+
+var myprojectsMenus = document.querySelectorAll('.myprojects-menu');
+
+myprojectsMenus.forEach(myprojectsMenu => {
+    myprojectsMenu.addEventListener('click', () => {
+        var dropdownTxt = document.querySelector('.dropdown-txt');
+        var myprojectsMenuTxt = myprojectsMenu.querySelector('.myprojects-menu-txt');
+        dropdownTxt.innerHTML = myprojectsMenuTxt.innerHTML;
     });
 });

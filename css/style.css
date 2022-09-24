@@ -189,7 +189,7 @@ body{
     border-radius: 15px;
     overflow: hidden;
     opacity: 0;
-    transition: margin 750ms, opacity 750ms;
+    transition: margin 750ms, opacity 750ms, left 750ms;
 }
 
 .myprojects-menu{
@@ -287,7 +287,7 @@ body{
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     grid-auto-flow: column;
     gap: 35px;
     background: #EAEAEA;
@@ -414,3 +414,9 @@ body{
 .js-7{background: url(../png/js_group/javascript.png) center/cover;}
 .js-8{background: url(../png/js_group/calculator-with-modern-flat-style_3322-74.jpg) center/cover;}
 .js-9{background: url(../png/js_group/maxresdefault\ \(1\)\ 2.png) center/cover;}
+.js-10{background: url(../png/js_group/download.png) center/cover;}
+.js-10-1{background: url(../png/js_group/javascript.png) center/cover;}
+.js-11{background: url(../png/js_group/One-Punch-Man-Business-Card-HTML-CSS.png) center/cover;}
+.js-12{background: url(../png/js_group/javascript.png) center/cover;}
+.js-13{background: url(../png/js_group/xy.jfif) center/cover;}
+.js-14{background: url(../png/js_group/dd\ menu.png) center/cover;}

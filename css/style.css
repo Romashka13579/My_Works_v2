@@ -20,6 +20,7 @@ body{
     flex-direction: column;
     width: 100%;
     min-height: 70px;
+    z-index: 2;
     box-shadow: 0px 10px 10px rgba(114, 114, 114, 0.25);
 }
 
@@ -188,7 +189,7 @@ body{
     border-radius: 15px;
     overflow: hidden;
     opacity: 0;
-    transition: all 750ms;
+    transition: margin 750ms, opacity 750ms;
 }
 
 .myprojects-menu{
@@ -198,7 +199,7 @@ body{
     align-items: center;
     gap: 20px;
     padding: 6px 20px;
-    background: #D9D9D9;
+    background: #B0B0B0;
     cursor: pointer;
 }
 
@@ -213,7 +214,7 @@ body{
 }
 
 .myprojects-menu:hover{
-    background: #B0B0B0;
+    background: #969696;
 }
 
 .myprojects-menu:hover > .myprojects-menu-txt{
@@ -241,9 +242,8 @@ body{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 120px 60px;
+    padding: 110px 50px;
     box-sizing: border-box;
-    transition: padding 750ms;
 }
 
 .main-block{
@@ -275,22 +275,23 @@ body{
     color: #40939E;
 }
 
+.main-block-bottom-overflow{
+    overflow: hidden;
+    border-radius: 35px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+}
+
 .main-block-bottom{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: column;
     gap: 35px;
     background: #EAEAEA;
     min-height: 110px;
     padding: 35px 35px;
     box-sizing: border-box;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 35px;
-}
-
-.main-block-bottom-coloumn{
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
 }
 
 .main-block-bottom-card{
@@ -312,7 +313,7 @@ body{
     display: grid;
     align-items: center;
     grid-template-columns: 42px 1fr;
-    gap: 5px;
+    gap: 10px;
 }
 
 .main-js-card-part-2{
@@ -358,6 +359,15 @@ body{
     color: #3A666C;
 }
 
+.main-js-card-bottom-txt-block{
+    display: flex;
+    width: 82px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: width 500ms;
+}
+
 .main-js-card-bottom-txt{
     width: 70px;
     font-family: 'Inter';
@@ -366,6 +376,18 @@ body{
     font-size: 14px;
     text-align: center;
     color: #40939E;
+}
+
+.fa-arrow-right{
+    font-size: 14px;
+    color: #40939E;
+}
+
+.main-js-card-bottom-txt-block:hover{width: 88px;}
+.main-js-card-bottom-txt-block:hover > .main-js-card-bottom-txt,
+.main-js-card-bottom-txt-block:hover > .fa-arrow-right{
+    transition: color 500ms;
+    color: #bdaa1c;
 }
 
 .main-js-card-bottom-jsicon{

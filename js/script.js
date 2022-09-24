@@ -126,19 +126,32 @@ myprojectsMenus.forEach(myprojectsMenu => {
 });
 
 var javascriptBtnBack = document.querySelector('.javascript-btn-back');
+var mainBlockBottomOverflow = document.querySelector('.main-block-bottom-overflow');
+var mainBlockBottom = document.querySelector('.main-block-bottom');
 
 var jsblockclicked = 1;
 
+var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+mainBlockBottom.style.marginTop = ""+(-mainBlockBottomstyle.height)+"px";
+
 javascriptBtnBack.addEventListener('click', () => {
+    mainBlockBottom.style.transition = "margin-top 2s";
     if(jsblockclicked == 1){
         jsblockclicked = 0;
         javascriptBtnBack.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
-        setInterval(() => {
+        mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+        mainBlockBottomOverflow.style.height = ""+mainBlockBottomstyle.height+"px";
+        mainBlockBottom.style.marginTop = "0px";
+        // setInterval(() => {
             
-        }, 10);
+        // }, 10);
+        // mainBlockBottomOverflow.style.height = "auto";
     }
     else if(jsblockclicked == 0){
         jsblockclicked = 1;
         javascriptBtnBack.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
+        mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+        mainBlockBottomOverflow.style.height = "0px";
+        mainBlockBottom.style.marginTop = ""+(-mainBlockBottomstyle.height)+"px";
     }
 });

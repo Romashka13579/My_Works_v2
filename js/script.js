@@ -131,6 +131,9 @@ javascriptBtnBack.addEventListener('click', () => {
     if(jsblockclicked == 1){
         jsblockclicked = 0;
         javascriptBtnBack.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
+        setInterval(() => {
+            
+        }, 10);
     }
     else if(jsblockclicked == 0){
         jsblockclicked = 1;

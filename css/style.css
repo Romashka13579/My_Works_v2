@@ -282,12 +282,12 @@ body{
 .js-arrow{
     font-size: 42px;
     color: #40939E;
-    transition: transform 1200ms;
+    transition: transform 600ms;
     cursor: pointer;
 }
 
 .js-arrow-block{
-    transition: transform 1200ms;
+    transition: transform 600ms;
 }
 
 .js-btn-right:hover > .js-arrow-block,

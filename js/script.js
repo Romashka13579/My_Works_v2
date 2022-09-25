@@ -6,14 +6,14 @@ var clicked = 1;
 var i = LinksProfiles.length - 1;
 
 LinksBtn.addEventListener('click', () => {
-    if(clicked == 1){
+    if (clicked == 1) {
         clicked = 0;
         ProfileLinks.style.display = "flex";
         setTimeout(() => {
             Links(LinksProfiles, i, 1);
         }, 10);
     }
-    else if(clicked == 0){
+    else if (clicked == 0) {
         clicked = 1;
         setTimeout(() => {
             Links(LinksProfiles, i, 0);
@@ -23,21 +23,21 @@ LinksBtn.addEventListener('click', () => {
 
 LinksProfiles.forEach(LinkProfile => {
     LinkProfile.addEventListener('transitionend', () => {
-        if(LinkProfile.style.opacity == 1){
+        if (LinkProfile.style.opacity == 1) {
             i--;
-            if(i>=0){
+            if (i >= 0) {
                 Links(LinksProfiles, i, 1);
             }
-            else{
+            else {
                 i++;
             }
         }
-        if(LinkProfile.style.opacity == 0){
+        if (LinkProfile.style.opacity == 0) {
             i++;
-            if(i < LinksProfiles.length){
+            if (i < LinksProfiles.length) {
                 Links(LinksProfiles, i, 0);
             }
-            else{
+            else {
                 i--;
                 ProfileLinks.style.display = "none";
             }
@@ -45,11 +45,11 @@ LinksProfiles.forEach(LinkProfile => {
     });
 });
 
-function Links(LinksProfiles, i, a){
-    if(a == 1){
+function Links(LinksProfiles, i, a) {
+    if (a == 1) {
         LinksProfiles[i].style.opacity = 1;
     }
-    else if(a == 0){
+    else if (a == 0) {
         LinksProfiles[i].style.opacity = 0;
     }
 }
@@ -63,7 +63,7 @@ var main = document.querySelector('.main');
 var headerclicked = 1;
 
 headerBotBtn.addEventListener('click', () => {
-    if(headerclicked == 1){
+    if (headerclicked == 1) {
         headerclicked = 0;
         faArrowUp.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
         headerBottomOverflow.style.display = "block";
@@ -74,7 +74,7 @@ headerBotBtn.addEventListener('click', () => {
             headerBottom.style.top = "0px";
         }, 10);
     }
-    else if(headerclicked == 0){
+    else if (headerclicked == 0) {
         headerclicked = 1;
         main.style.transition = "padding 750ms";
         main.style.paddingTop = "110px"
@@ -94,34 +94,43 @@ var dropdownBtnstyle;
 
 dropdownBtn.addEventListener('focus', () => {
     dropdownBtnstyle = dropdownBtn.getBoundingClientRect();
-    dropdownMyprojectsMenu.style.left = ""+(dropdownBtnstyle.left + 10)+"px";
+    dropdownMyprojectsMenu.style.left = "" + (dropdownBtnstyle.left + 10) + "px";
     dropdownMyprojectsMenu.style.display = "block";
     setTimeout(() => {
         dropdownMyprojectsMenu.style.opacity = 1;
         dropdownMyprojectsMenu.style.marginTop = "165px";
-        dropdownMyprojectsMenu.style.left = ""+(dropdownBtnstyle.left)+"px";
+        dropdownMyprojectsMenu.style.left = "" + (dropdownBtnstyle.left) + "px";
     }, 10);
 });
 
 dropdownBtn.addEventListener('focusout', () => {
     dropdownBtnstyle = dropdownBtn.getBoundingClientRect();
     dropdownMyprojectsMenu.style.opacity = 0;
-    dropdownMyprojectsMenu.style.left = ""+(dropdownBtnstyle.left + 10)+"px";
+    dropdownMyprojectsMenu.style.left = "" + (dropdownBtnstyle.left + 10) + "px";
     dropdownMyprojectsMenu.style.marginTop = "185px";
     dropdownMyprojectsMenu.addEventListener('transitionend', () => {
-        if(dropdownMyprojectsMenu.style.marginTop == "185px"){
+        if (dropdownMyprojectsMenu.style.marginTop == "185px") {
             dropdownMyprojectsMenu.style.display = "none";
         }
     });
 });
 
 var myprojectsMenus = document.querySelectorAll('.myprojects-menu');
+var javascriptTxt = document.querySelector('.javascript-txt');
+var myprojectstxti = 2;
 
 myprojectsMenus.forEach(myprojectsMenu => {
     myprojectsMenu.addEventListener('click', () => {
+        for(var k = 0; k < myprojectsMenus.length; k++){
+            if(myprojectsMenus[k] == myprojectsMenu){
+                myprojectstxti = k;
+            }
+        }
+        console.log(myprojectstxti);
         var dropdownTxt = document.querySelector('.dropdown-txt');
         var myprojectsMenuTxt = myprojectsMenu.querySelector('.myprojects-menu-txt');
         dropdownTxt.innerHTML = myprojectsMenuTxt.innerHTML;
+        javascriptTxt.innerHTML = myprojectsMenuTxt.innerHTML;
     });
 });
 
@@ -132,49 +141,43 @@ var mainBlockBottom = document.querySelector('.main-block-bottom');
 var jsblockclicked = 1;
 
 var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-mainBlockBottom.style.marginTop = ""+(-mainBlockBottomstyle.height)+"px";
+mainBlockBottom.style.marginTop = "" + (-mainBlockBottomstyle.height) + "px";
 
 javascriptBtnBack.addEventListener('click', () => {
     mainBlockBottom.style.transition = "margin-top 2s";
-    if(jsblockclicked == 1){
+    if (jsblockclicked == 1) {
         jsblockclicked = 0;
         javascriptBtnBack.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
         mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-        mainBlockBottomOverflow.style.height = ""+mainBlockBottomstyle.height+"px";
+        mainBlockBottomOverflow.style.height = "" + mainBlockBottomstyle.height + "px";
         mainBlockBottom.style.marginTop = "0px";
-        // setInterval(() => {
-            
-        // }, 10);
-        // mainBlockBottomOverflow.style.height = "auto";
     }
-    else if(jsblockclicked == 0){
+    else if (jsblockclicked == 0) {
         jsblockclicked = 1;
         javascriptBtnBack.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
         mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
         mainBlockBottomOverflow.style.height = "0px";
-        mainBlockBottom.style.marginTop = ""+(-mainBlockBottomstyle.height)+"px";
+        mainBlockBottom.style.marginTop = "" + (-mainBlockBottomstyle.height) + "px";
     }
 });
 
 var jsBtnLeft = document.querySelector('.js-btn-left');
 var jsBtnRight = document.querySelector('.js-btn-right');
-var javascriptTxt = document.querySelector('.javascript-txt');
 var myprojectsMenuTxt_2 = document.querySelectorAll('.myprojects-menu-txt');
-
-var myprojectstxti = 2;
-
-jsBtnLeft.addEventListener('click', () => {
-    myprojectstxti++;
-    javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
-    if(myprojectstxti == myprojectsMenuTxt_2.length-1){
-        myprojectstxti = 0;
-    }
-});
+var myprojectsMenus = document.querySelectorAll('.myprojects-menu');
 
 jsBtnRight.addEventListener('click', () => {
-    myprojectstxti--;
-    javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
-    if(myprojectstxti == 0){
-        myprojectstxti = myprojectsMenuTxt_2.length-1;
+    myprojectstxti++;
+    if (myprojectstxti == myprojectsMenuTxt_2.length) {
+        myprojectstxti = 0;
     }
+    javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
+});
+
+jsBtnLeft.addEventListener('click', () => {
+    myprojectstxti--;
+    if (myprojectstxti == -1) {
+        myprojectstxti = myprojectsMenuTxt_2.length - 1;
+    }
+    javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
 });

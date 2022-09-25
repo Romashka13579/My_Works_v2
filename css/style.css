@@ -154,6 +154,7 @@ body{
     background: none;
     padding: 0px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .dropdownorlink-txt,

@@ -172,6 +172,8 @@ jsBtnRight.addEventListener('click', () => {
         myprojectstxti = 0;
     }
     javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
+    var dropdownTxt = document.querySelector('.dropdown-txt');
+    dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
 });
 
 jsBtnLeft.addEventListener('click', () => {
@@ -180,4 +182,6 @@ jsBtnLeft.addEventListener('click', () => {
         myprojectstxti = myprojectsMenuTxt_2.length - 1;
     }
     javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
+    var dropdownTxt = document.querySelector('.dropdown-txt');
+    dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
 });

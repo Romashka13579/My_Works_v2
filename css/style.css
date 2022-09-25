@@ -265,6 +265,44 @@ body{
     color: #40939E;
 }
 
+.javascript-btns-leftright{
+    display: flex;
+    gap: 30px;
+}
+
+.js-btn-left,
+.js-btn-right{
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0px;
+}
+
+.js-arrow{
+    font-size: 42px;
+    color: #40939E;
+    transition: transform 1500ms;
+    cursor: pointer;
+}
+
+.js-arrow-block{
+    transition: transform 1500ms;
+}
+
+.js-btn-right:hover > .js-arrow-block,
+.js-btn-left:hover > .js-arrow-block{
+    transform:matrix(-1.00,0.00,-0.00,-1.00,0,0);
+    -ms-transform:matrix(-1.00,0.00,-0.00,-1.00,0,0);
+    -webkit-transform:matrix(-1.00,0.00,-0.00,-1.00,0,0);
+}
+
+.js-btn-left:hover > .js-arrow-block .js-arrow,
+.js-btn-right:hover > .js-arrow-block .js-arrow{
+    transform:matrix(-1.00,0.00,-0.00,-1.00,0,0);
+    -ms-transform:matrix(-1.00,0.00,-0.00,-1.00,0,0);
+    -webkit-transform:matrix(-1.00,0.00,-0.00,-1.00,0,0);
+}
+
 .javascript-btn{
     outline: none;
     border: none;
@@ -379,14 +417,14 @@ body{
     color: #40939E;
 }
 
-.fa-arrow-right{
+.main-js-arrow{
     font-size: 14px;
     color: #40939E;
 }
 
 .main-js-card-bottom-txt-block:hover{width: 88px;}
 .main-js-card-bottom-txt-block:hover > .main-js-card-bottom-txt,
-.main-js-card-bottom-txt-block:hover > .fa-arrow-right{
+.main-js-card-bottom-txt-block:hover > .main-js-arrow{
     transition: color 500ms;
     color: #bdaa1c;
 }

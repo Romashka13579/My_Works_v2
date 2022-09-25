@@ -90,7 +90,7 @@ headerBotBtn.addEventListener('click', () => {
 var dropdownBtn = document.querySelector('.dropdown-btn');
 var dropdownMyprojectsMenu = document.querySelector('.dropdown-myprojects-menu-overflow');
 
-var dropdownBtnstyle
+var dropdownBtnstyle;
 
 dropdownBtn.addEventListener('focus', () => {
     dropdownBtnstyle = dropdownBtn.getBoundingClientRect();
@@ -153,5 +153,28 @@ javascriptBtnBack.addEventListener('click', () => {
         mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
         mainBlockBottomOverflow.style.height = "0px";
         mainBlockBottom.style.marginTop = ""+(-mainBlockBottomstyle.height)+"px";
+    }
+});
+
+var jsBtnLeft = document.querySelector('.js-btn-left');
+var jsBtnRight = document.querySelector('.js-btn-right');
+var javascriptTxt = document.querySelector('.javascript-txt');
+var myprojectsMenuTxt_2 = document.querySelectorAll('.myprojects-menu-txt');
+
+var myprojectstxti = 2;
+
+jsBtnLeft.addEventListener('click', () => {
+    myprojectstxti++;
+    javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
+    if(myprojectstxti == myprojectsMenuTxt_2.length-1){
+        myprojectstxti = 0;
+    }
+});
+
+jsBtnRight.addEventListener('click', () => {
+    myprojectstxti--;
+    javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
+    if(myprojectstxti == 0){
+        myprojectstxti = myprojectsMenuTxt_2.length-1;
     }
 });

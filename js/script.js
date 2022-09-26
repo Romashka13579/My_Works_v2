@@ -138,6 +138,7 @@ myprojectsMenus.forEach(myprojectsMenu => {
 });
 
 var javascriptBtnBack = document.querySelector('.javascript-btn-back');
+var mainBlockBottom_array = document.querySelectorAll('.main-block-bottom');
 
 mainBlockBottomOverflow_array.forEach(mainBlockBottomOverflow => {
     mainBlockBottomOverflow.style.display = "none";
@@ -146,9 +147,17 @@ mainBlockBottomOverflow_array.forEach(mainBlockBottomOverflow => {
 mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
 
+mainBlockBottom_array.forEach(mainBlockBottom => {
+    var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+    mainBlockBottom.style.marginTop = ""+(-mainBlockBottomstyle.height)+"px";
+});
+
 var jsblockclicked = 1;
 
 javascriptBtnBack.addEventListener('click', () => {
+    mainBlockBottom_array.forEach(mainBlockBottom => {
+        mainBlockBottom.style.transition = "margin-top 2000ms";
+    });
     if (jsblockclicked == 1) {
         jsblockclicked = 0;
         javascriptBtnBack.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
@@ -173,6 +182,11 @@ var myprojectsMenuTxt_2 = document.querySelectorAll('.myprojects-menu-txt');
 var myprojectsMenus = document.querySelectorAll('.myprojects-menu');
 
 jsBtnRight.addEventListener('click', () => {
+    mainBlockBottomOverflow_array[myprojectstxti].style.display = "none";
+    var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
+    var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+    mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
+    mainBlockBottom.style.marginTop = "" + (-mainBlockBottomstyle.height) + "px";
     myprojectstxti++;
     if (myprojectstxti == myprojectsMenuTxt_2.length) {
         myprojectstxti = 0;
@@ -180,9 +194,14 @@ jsBtnRight.addEventListener('click', () => {
     javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
     var dropdownTxt = document.querySelector('.dropdown-txt');
     dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
+    mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 });
 
 jsBtnLeft.addEventListener('click', () => {
+    var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
+    var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+    mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
+    mainBlockBottomOverflow_array[myprojectstxti].style.display = "none";
     myprojectstxti--;
     if (myprojectstxti == -1) {
         myprojectstxti = myprojectsMenuTxt_2.length - 1;
@@ -190,4 +209,9 @@ jsBtnLeft.addEventListener('click', () => {
     javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
     var dropdownTxt = document.querySelector('.dropdown-txt');
     dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
+    mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 });
+
+function ProjectPageChange(){
+
+}

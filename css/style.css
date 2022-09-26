@@ -317,6 +317,7 @@ body{
 
 .main-block-bottom-overflow{
     overflow: hidden;
+    display: flex;
     border-radius: 35px;
     height: 0px;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
@@ -324,6 +325,7 @@ body{
 }
 
 .main-block-bottom{
+    float: left;
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -333,6 +335,13 @@ body{
     background: #EAEAEA;
     padding: 35px 35px;
     box-sizing: border-box;
+}
+
+.main-block-bottom-full{
+    position: relative;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
 }
 
 .main-block-bottom-card{

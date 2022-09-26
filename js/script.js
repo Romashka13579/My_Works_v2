@@ -136,28 +136,39 @@ myprojectsMenus.forEach(myprojectsMenu => {
 
 var javascriptBtnBack = document.querySelector('.javascript-btn-back');
 var mainBlockBottomOverflow = document.querySelector('.main-block-bottom-overflow');
-var mainBlockBottom = document.querySelector('.main-block-bottom');
+var mainBlocksBottoms = document.querySelectorAll('.main-block-bottom');
 
 var jsblockclicked = 1;
 
-var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-mainBlockBottom.style.marginTop = "" + (-mainBlockBottomstyle.height) + "px";
+var mainBlocksBottomsstyle = mainBlocksBottoms[myprojectstxti].getBoundingClientRect();
+var mainBlockBottomOverflowstyle = mainBlockBottomOverflow.getBoundingClientRect();
+
+mainBlocksBottoms.forEach(mainBlockBottom => {
+    mainBlocksBottomsstyle = mainBlocksBottoms[myprojectstxti].getBoundingClientRect();
+    mainBlockBottomOverflowstyle = mainBlockBottomOverflow.getBoundingClientRect();
+    mainBlockBottom.style.marginTop = "" + (-mainBlocksBottomsstyle.height) + "px";
+    mainBlockBottom.style.width = "" + (mainBlockBottomOverflowstyle.width) + "px";
+    console.log(mainBlockBottomOverflowstyle.width, mainBlockBottom.style.width);
+    mainBlocksBottoms = document.querySelectorAll('.main-block-bottom');
+});
 
 javascriptBtnBack.addEventListener('click', () => {
-    mainBlockBottom.style.transition = "margin-top 2s";
+    mainBlocksBottoms.forEach(mainBlockBottom => {
+        mainBlockBottom.style.transition = "margin-top 2s";
+    });
     if (jsblockclicked == 1) {
         jsblockclicked = 0;
         javascriptBtnBack.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
-        mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-        mainBlockBottomOverflow.style.height = "" + mainBlockBottomstyle.height + "px";
-        mainBlockBottom.style.marginTop = "0px";
+        mainBlocksBottomsstyle = mainBlocksBottoms[myprojectstxti].getBoundingClientRect();
+        mainBlockBottomOverflow.style.height = "" + mainBlocksBottomsstyle.height + "px";
+        mainBlocksBottoms[myprojectstxti].style.marginTop = "0px";
     }
     else if (jsblockclicked == 0) {
         jsblockclicked = 1;
         javascriptBtnBack.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
-        mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+        mainBlocksBottomsstyle = mainBlocksBottoms[myprojectstxti].getBoundingClientRect();
         mainBlockBottomOverflow.style.height = "0px";
-        mainBlockBottom.style.marginTop = "" + (-mainBlockBottomstyle.height) + "px";
+        mainBlocksBottoms[myprojectstxti].style.marginTop = "" + (-mainBlocksBottomsstyle.height) + "px";
     }
 });
 

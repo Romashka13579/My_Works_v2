@@ -117,10 +117,12 @@ dropdownBtn.addEventListener('focusout', () => {
 
 var myprojectsMenus = document.querySelectorAll('.myprojects-menu');
 var javascriptTxt = document.querySelector('.javascript-txt');
+var mainBlockBottomOverflow_array = document.querySelectorAll('.main-block-bottom-overflow');
 var myprojectstxti = 2;
 
 myprojectsMenus.forEach(myprojectsMenu => {
     myprojectsMenu.addEventListener('click', () => {
+        mainBlockBottomOverflow_array[myprojectstxti].style.display = "none";
         for(var k = 0; k < myprojectsMenus.length; k++){
             if(myprojectsMenus[k] == myprojectsMenu){
                 myprojectstxti = k;
@@ -131,17 +133,17 @@ myprojectsMenus.forEach(myprojectsMenu => {
         var myprojectsMenuTxt = myprojectsMenu.querySelector('.myprojects-menu-txt');
         dropdownTxt.innerHTML = myprojectsMenuTxt.innerHTML;
         javascriptTxt.innerHTML = myprojectsMenuTxt.innerHTML;
+        mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
     });
 });
 
 var javascriptBtnBack = document.querySelector('.javascript-btn-back');
-var mainBlockBottomOverflow_array = document.querySelectorAll('.main-block-bottom-overflow');
 
 mainBlockBottomOverflow_array.forEach(mainBlockBottomOverflow => {
     mainBlockBottomOverflow.style.display = "none";
 });
 
-mainBlockBottomOverflow_array[myprojectstxti].style.display = "flex";
+mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
 
 var jsblockclicked = 1;

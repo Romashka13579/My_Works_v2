@@ -315,6 +315,17 @@ body{
     color: #40939E;
 }
 
+.main-blocks-overflow{
+    overflow: hidden;
+}
+
+.main-blocks-full{
+    position: relative;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+}
+
 .main-block-bottom-overflow{
     overflow: hidden;
     border-radius: 35px;

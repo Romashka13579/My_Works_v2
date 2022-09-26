@@ -328,6 +328,7 @@ body{
     float: left;
     position: relative;
     display: grid;
+    min-height: 1000px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-auto-flow: column;
@@ -335,6 +336,16 @@ body{
     background: #EAEAEA;
     padding: 35px 35px;
     box-sizing: border-box;
+}
+
+.main-block-bottom-html,
+.main-block-bottom-css,
+.main-block-bottom-c,
+.main-block-bottom-csharp,
+.main-block-bottom-python{
+    height: 1000px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
 
 .main-block-bottom-full{

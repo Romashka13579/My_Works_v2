@@ -136,6 +136,7 @@ myprojectsMenus.forEach(myprojectsMenu => {
 
 var javascriptBtnBack = document.querySelector('.javascript-btn-back');
 var mainBlockBottomOverflow = document.querySelector('.main-block-bottom-overflow');
+var mainBlockBottomFull = document.querySelector('.main-block-bottom-full');
 var mainBlocksBottoms = document.querySelectorAll('.main-block-bottom');
 
 var jsblockclicked = 1;
@@ -155,20 +156,24 @@ mainBlocksBottoms.forEach(mainBlockBottom => {
 javascriptBtnBack.addEventListener('click', () => {
     mainBlocksBottoms.forEach(mainBlockBottom => {
         mainBlockBottom.style.transition = "margin-top 2s";
+        if (jsblockclicked == 1) {
+            mainBlocksBottomsstyle = mainBlocksBottoms[myprojectstxti].getBoundingClientRect();
+            mainBlockBottomOverflow.style.height = "" + mainBlocksBottomsstyle.height + "px";
+            mainBlockBottom.style.marginTop = "0px";
+        }
+        else if (jsblockclicked == 0) {
+            mainBlocksBottomsstyle = mainBlocksBottoms[myprojectstxti].getBoundingClientRect();
+            mainBlockBottomOverflow.style.height = "0px";
+            mainBlockBottom.style.marginTop = "" + (-mainBlocksBottomsstyle.height) + "px";
+        }
     });
     if (jsblockclicked == 1) {
         jsblockclicked = 0;
         javascriptBtnBack.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
-        mainBlocksBottomsstyle = mainBlocksBottoms[myprojectstxti].getBoundingClientRect();
-        mainBlockBottomOverflow.style.height = "" + mainBlocksBottomsstyle.height + "px";
-        mainBlocksBottoms[myprojectstxti].style.marginTop = "0px";
     }
     else if (jsblockclicked == 0) {
         jsblockclicked = 1;
         javascriptBtnBack.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
-        mainBlocksBottomsstyle = mainBlocksBottoms[myprojectstxti].getBoundingClientRect();
-        mainBlockBottomOverflow.style.height = "0px";
-        mainBlocksBottoms[myprojectstxti].style.marginTop = "" + (-mainBlocksBottomsstyle.height) + "px";
     }
 });
 
@@ -185,6 +190,7 @@ jsBtnRight.addEventListener('click', () => {
     javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
     var dropdownTxt = document.querySelector('.dropdown-txt');
     dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
+    mainBlockBottomFull.style.marginLeft = ""+(-(mainBlockBottomOverflowstyle.width * myprojectstxti))+"px";
 });
 
 jsBtnLeft.addEventListener('click', () => {
@@ -195,4 +201,5 @@ jsBtnLeft.addEventListener('click', () => {
     javascriptTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
     var dropdownTxt = document.querySelector('.dropdown-txt');
     dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
+    mainBlockBottomFull.style.marginLeft = ""+(-(mainBlockBottomOverflowstyle.width * myprojectstxti))+"px";
 });

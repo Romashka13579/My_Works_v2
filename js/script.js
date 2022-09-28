@@ -131,14 +131,12 @@ var myprojectstxti = 2;
 mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
 
-// mainBlockBottom_array.forEach(mainBlockBottom => {
-//     var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-//     mainBlockBottom.style.marginTop = ""+(-mainBlockBottomstyle.height)+"px";
-// });
-
 javascriptBtnBack.addEventListener('click', () => {
-    mainBlockBottom_array.forEach(mainBlockBottom => {
-        mainBlockBottom.style.transition = "margin-top 2000ms";
+    // mainBlockBottom_array.forEach(mainBlockBottom => {
+    //     mainBlockBottom.style.transition = "margin-top 2000ms";
+    // });
+    mainBlockBottomOverflow_array.forEach(mainBlockBottomOverflow => {
+        mainBlockBottomOverflow.style.transition = "height 2000ms";
     });
     if (jsblockclicked == 1) {
         jsblockclicked = 0;
@@ -172,6 +170,7 @@ myprojectsMenus.forEach(myprojectsMenu => {
         if (jsblockclicked == 0) {
             var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
             var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+            mainBlockBottomOverflow_array[myprojectstxti].style.transition = "0s";
             mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
         }
     });
@@ -191,6 +190,7 @@ jsBtnRight.addEventListener('click', () => {
     if (jsblockclicked == 0) {
         var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
         var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+        mainBlockBottomOverflow_array[myprojectstxti].style.transition = "0s";
         mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
     }
 });
@@ -206,9 +206,13 @@ jsBtnLeft.addEventListener('click', () => {
     var dropdownTxt = document.querySelector('.dropdown-txt');
     dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
     mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
+    mainBlockBottom_array.forEach(mainBlockBottom => {
+        mainBlockBottom.style.transition = "0s";
+    });
     if (jsblockclicked == 0) {
         var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
         var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+        mainBlockBottomOverflow_array[myprojectstxti].style.transition = "0s";
         mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
     }
 });

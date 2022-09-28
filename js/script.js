@@ -118,7 +118,23 @@ dropdownBtn.addEventListener('focusout', () => {
 var myprojectsMenus = document.querySelectorAll('.myprojects-menu');
 var javascriptTxt = document.querySelector('.javascript-txt');
 var mainBlockBottomOverflow_array = document.querySelectorAll('.main-block-bottom-overflow');
+var jsBtnLeft = document.querySelector('.js-btn-left');
+var jsBtnRight = document.querySelector('.js-btn-right');
+var myprojectsMenuTxt_2 = document.querySelectorAll('.myprojects-menu-txt');
+var myprojectsMenus = document.querySelectorAll('.myprojects-menu');
+var javascriptBtnBack = document.querySelector('.javascript-btn-back');
+var mainBlockBottom_array = document.querySelectorAll('.main-block-bottom');
+
+var jsblockclicked = 1;
 var myprojectstxti = 2;
+
+mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
+mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
+
+// mainBlockBottom_array.forEach(mainBlockBottom => {
+//     var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+//     mainBlockBottom.style.marginTop = ""+(-mainBlockBottomstyle.height)+"px";
+// });
 
 myprojectsMenus.forEach(myprojectsMenu => {
     myprojectsMenu.addEventListener('click', () => {
@@ -137,42 +153,27 @@ myprojectsMenus.forEach(myprojectsMenu => {
     });
 });
 
-var javascriptBtnBack = document.querySelector('.javascript-btn-back');
-var mainBlockBottom_array = document.querySelectorAll('.main-block-bottom');
-
-mainBlockBottomOverflow_array.forEach(mainBlockBottomOverflow => {
-    mainBlockBottomOverflow.style.display = "none";
-});
-
-mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
-mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
-
-mainBlockBottom_array.forEach(mainBlockBottom => {
-    var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-    mainBlockBottom.style.marginTop = ""+(-mainBlockBottomstyle.height)+"px";
-});
-
-var jsblockclicked = 1;
-
 javascriptBtnBack.addEventListener('click', () => {
-    mainBlockBottom_array.forEach(mainBlockBottom => {
-        mainBlockBottom.style.transition = "margin-top 2000ms";
-    });
+    // mainBlockBottom_array.forEach(mainBlockBottom => {
+    //     mainBlockBottom.style.transition = "margin-top 2000ms";
+    // });
     if (jsblockclicked == 1) {
         jsblockclicked = 0;
         javascriptBtnBack.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
-        var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
-        var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-        mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
-        mainBlockBottom.style.marginTop = "0px";
+        mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
+        // var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
+        // var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+        // mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
+        // mainBlockBottom.style.marginTop = "0px";
     }
     else if (jsblockclicked == 0) {
         jsblockclicked = 1;
         javascriptBtnBack.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
-        var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
-        var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-        mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
-        mainBlockBottom.style.marginTop = "" + (-mainBlockBottomstyle.height) + "px";
+        mainBlockBottomOverflow_array[myprojectstxti].style.display = "none";
+        // var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
+        // var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+        // mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
+        // mainBlockBottom.style.marginTop = "" + (-mainBlockBottomstyle.height) + "px";
     }
 });
 
@@ -183,10 +184,10 @@ var myprojectsMenus = document.querySelectorAll('.myprojects-menu');
 
 jsBtnRight.addEventListener('click', () => {
     mainBlockBottomOverflow_array[myprojectstxti].style.display = "none";
-    var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
-    var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-    mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
-    mainBlockBottom.style.marginTop = "" + (-mainBlockBottomstyle.height) + "px";
+    // var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
+    // var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+    // mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
+    // mainBlockBottom.style.marginTop = "" + (-mainBlockBottomstyle.height) + "px";
     myprojectstxti++;
     if (myprojectstxti == myprojectsMenuTxt_2.length) {
         myprojectstxti = 0;
@@ -198,9 +199,9 @@ jsBtnRight.addEventListener('click', () => {
 });
 
 jsBtnLeft.addEventListener('click', () => {
-    var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
-    var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-    mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
+    // var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
+    // var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+    // mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
     mainBlockBottomOverflow_array[myprojectstxti].style.display = "none";
     myprojectstxti--;
     if (myprojectstxti == -1) {
@@ -211,7 +212,3 @@ jsBtnLeft.addEventListener('click', () => {
     dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
     mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 });
-
-function ProjectPageChange(){
-
-}

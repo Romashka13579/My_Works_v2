@@ -328,6 +328,7 @@ body{
 
 .main-block-bottom-overflow{
     overflow: hidden;
+    display: none;
     border-radius: 35px;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
     transition: height 2s;

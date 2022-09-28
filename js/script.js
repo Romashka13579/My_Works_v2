@@ -136,9 +136,28 @@ mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
 //     mainBlockBottom.style.marginTop = ""+(-mainBlockBottomstyle.height)+"px";
 // });
 
+javascriptBtnBack.addEventListener('click', () => {
+    mainBlockBottom_array.forEach(mainBlockBottom => {
+        mainBlockBottom.style.transition = "margin-top 2000ms";
+    });
+    if (jsblockclicked == 1) {
+        jsblockclicked = 0;
+        javascriptBtnBack.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
+        var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
+        var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+        mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
+    }
+    else if (jsblockclicked == 0) {
+        jsblockclicked = 1;
+        javascriptBtnBack.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
+        mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
+    }
+});
+
 myprojectsMenus.forEach(myprojectsMenu => {
     myprojectsMenu.addEventListener('click', () => {
         mainBlockBottomOverflow_array[myprojectstxti].style.display = "none";
+        mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
         for(var k = 0; k < myprojectsMenus.length; k++){
             if(myprojectsMenus[k] == myprojectsMenu){
                 myprojectstxti = k;
@@ -150,44 +169,17 @@ myprojectsMenus.forEach(myprojectsMenu => {
         dropdownTxt.innerHTML = myprojectsMenuTxt.innerHTML;
         javascriptTxt.innerHTML = myprojectsMenuTxt.innerHTML;
         mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
+        if (jsblockclicked == 0) {
+            var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
+            var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+            mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
+        }
     });
 });
 
-javascriptBtnBack.addEventListener('click', () => {
-    // mainBlockBottom_array.forEach(mainBlockBottom => {
-    //     mainBlockBottom.style.transition = "margin-top 2000ms";
-    // });
-    if (jsblockclicked == 1) {
-        jsblockclicked = 0;
-        javascriptBtnBack.style.transform = "matrix(1.00,0.00,0.00,1.00,0,0)";
-        mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
-        // var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
-        // var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-        // mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
-        // mainBlockBottom.style.marginTop = "0px";
-    }
-    else if (jsblockclicked == 0) {
-        jsblockclicked = 1;
-        javascriptBtnBack.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
-        mainBlockBottomOverflow_array[myprojectstxti].style.display = "none";
-        // var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
-        // var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-        // mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
-        // mainBlockBottom.style.marginTop = "" + (-mainBlockBottomstyle.height) + "px";
-    }
-});
-
-var jsBtnLeft = document.querySelector('.js-btn-left');
-var jsBtnRight = document.querySelector('.js-btn-right');
-var myprojectsMenuTxt_2 = document.querySelectorAll('.myprojects-menu-txt');
-var myprojectsMenus = document.querySelectorAll('.myprojects-menu');
-
 jsBtnRight.addEventListener('click', () => {
     mainBlockBottomOverflow_array[myprojectstxti].style.display = "none";
-    // var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
-    // var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-    // mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
-    // mainBlockBottom.style.marginTop = "" + (-mainBlockBottomstyle.height) + "px";
+    mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
     myprojectstxti++;
     if (myprojectstxti == myprojectsMenuTxt_2.length) {
         myprojectstxti = 0;
@@ -196,13 +188,16 @@ jsBtnRight.addEventListener('click', () => {
     var dropdownTxt = document.querySelector('.dropdown-txt');
     dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
     mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
+    if (jsblockclicked == 0) {
+        var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
+        var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+        mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
+    }
 });
 
 jsBtnLeft.addEventListener('click', () => {
-    // var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
-    // var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-    // mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
     mainBlockBottomOverflow_array[myprojectstxti].style.display = "none";
+    mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
     myprojectstxti--;
     if (myprojectstxti == -1) {
         myprojectstxti = myprojectsMenuTxt_2.length - 1;
@@ -211,4 +206,9 @@ jsBtnLeft.addEventListener('click', () => {
     var dropdownTxt = document.querySelector('.dropdown-txt');
     dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
     mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
+    if (jsblockclicked == 0) {
+        var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
+        var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+        mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
+    }
 });

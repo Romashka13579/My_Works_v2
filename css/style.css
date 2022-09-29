@@ -367,6 +367,11 @@ body{
     grid-template-rows: repeat(1, 1fr);
 }
 
+.main-block-bottom-python{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+
 .main-block-bottom-card{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -417,7 +422,8 @@ body{
 .main-js-card-top-htmlicon,
 .main-js-card-top-cssicon,
 .main-js-card-top-cplusicon,
-.main-js-card-top-csharpicon{
+.main-js-card-top-csharpicon,
+.main-js-card-top-pythonicon{
     width: 42px;
     height: 42px;
     background: url(../png/html.png) center/cover;
@@ -426,6 +432,7 @@ body{
 .main-js-card-top-cssicon{background: url(../png/css3.png) center/cover;}
 .main-js-card-top-cplusicon{background: url(../png/c.png) center/cover;}
 .main-js-card-top-csharpicon{background: url(../png/csharp.png) center/cover;}
+.main-js-card-top-pythonicon{background: url(../png/python.png) center/cover;}
 .main-js-card-top-jsicon{
     background: url(../png/javascript.png) center/cover;
     border-radius: 8px;
@@ -501,3 +508,4 @@ body{
 .js-1{background: url(../png/js_group/JS_1.jpg) center/cover;}
 .cplus-1{background: url(../png/js_group/CPLUS_1.jpg) center/cover;}
 .csharp-1{background: url(../png/js_group/CSHARP_1.png) center/cover;}
+.python-1{background: url(../png/js_group/CPLUS_1.jpg) center/cover;}

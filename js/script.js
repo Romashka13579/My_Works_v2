@@ -123,7 +123,7 @@ var javascriptBtnBack = document.querySelector('.javascript-btn-back');
 var mainBlockBottom_array = document.querySelectorAll('.main-block-bottom');
 
 var jsblockclicked = 1;
-var myprojectstxti = 4;
+var myprojectstxti = 2;
 
 mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
@@ -255,34 +255,42 @@ for(var d = JsNameArray.length-1; d >=0; d--){
 
 var mainBlockBottomCplus = document.querySelector('.main-block-bottom-cplus');
 var mainBlockBottomCard = mainBlockBottomCplus.querySelector('.main-block-bottom-card');
-var CplusNameArray = ['Matrix Max', 'Seven Segm.', 'Arduino Proj.', 'Arduino Other', 'Qt 1 Creator', 'Qt 2 Creator', 'Qt 2 Creator'];
-var CplusBackArray = ['CPLUS_2.jfif', 'CPLUS_3.png', 'CPLUS_4', 'CPLUS_5.png!d', 'CPLUS_6.png', 'CPLUS_6.png', 'CPLUS_6.png'];
-var CplusLinkArray = ['Arduino_MatrixMax', 'Arduino_Seven-segment-indicator', 'Arduino_Project', 'Arduino_Other', 'QtCreator_1', 'QtCreator_2', 'QtCreator_2'];
+var CplusNameArray = ['Tin Ker Cad', 'Matrix Max', 'Seven Segm.', 'Arduino Proj.', 'Arduino Other', 'Qt 1 Creator', 'Qt 2 Creator', 'Qt 2 Creator'];
+var CplusBackArray = ['CPLUS_TINKERCAD.png', 'CPLUS_2.jfif', 'CPLUS_3.png', 'CPLUS_4', 'CPLUS_5.png!d', 'CPLUS_6.png', 'CPLUS_6.png', 'CPLUS_6.png'];
+var CplusLinkArray = ['Arduino_MatrixMax', 'Arduino_MatrixMax', 'Arduino_Seven-segment-indicator', 'Arduino_Project', 'Arduino_Other', 'QtCreator_1', 'QtCreator_2', 'QtCreator_2'];
 
 for(var d = CplusNameArray.length-1; d >=0; d--){
     var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);
     mainBlockBottomCard.after(mainBlockBottomCard_clone);
 
     mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = CplusNameArray[d];
-    if(d >= 4){mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Qt Creator / Project "+(d-3)+"";}
-    else{mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Arduino / Project "+(d+1)+"";}
+    if(d == 0){
+        mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / TinKerCad";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://www.tinkercad.com/users/h70OFn5l97m";
+    }
+    else if(d >= 5){
+        mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Qt Creator / Project "+(d-4)+"";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/"+CplusLinkArray[d]+"";
+    }
+    else{
+        mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Arduino / Project "+(d)+"";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/"+CplusLinkArray[d]+"";
+    }
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+CplusBackArray[d]+") center/cover";
-    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/"+CplusLinkArray[d]+"";
 }
 
 var mainBlockBottomCsharp = document.querySelector('.main-block-bottom-csharp');
 var mainBlockBottomCard = mainBlockBottomCsharp.querySelector('.main-block-bottom-card');
 var CsharpNameArray = ['Menu Test', 'Team Game'];
 var CsharpBackArray = ['CSHARP_2.png', 'CSHARP_3.jpg'];
-var CsharpLinkArray = ['Arduino_MatrixMax', 'Arduino_Seven-segment-indicator', 'Arduino_Project', 'Arduino_Other', 'QtCreator_1', 'QtCreator_2', 'QtCreator_2'];
+var CsharpLinkArray = ['Romashka13579/2D_Menu_Test', 'Renie56/Game'];
 
 for(var d = CsharpNameArray.length-1; d >=0; d--){
     var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);
     mainBlockBottomCard.after(mainBlockBottomCard_clone);
 
     mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = CsharpNameArray[d];
-    if(d >= 4){mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Qt Creator / Project "+(d-3)+"";}
-    else{mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Arduino / Project "+(d+1)+"";}
+    mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Arduino / Project "+(d+1)+"";
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+CsharpBackArray[d]+") center/cover";
-    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/"+CsharpLinkArray[d]+"";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/"+CsharpLinkArray[d]+"";
 }

@@ -81,9 +81,6 @@ headerBotBtn.addEventListener('click', () => {
         faArrowUp.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
         headerBottom.style.top = "-80px";
         headerBottomOverflow.style.height = "0px";
-        setTimeout(() => {
-            Links(LinksProfiles, i, 0);
-        }, 10);
     }
 });
 
@@ -202,20 +199,31 @@ jsBtnLeft.addEventListener('click', () => {
     }
 });
 
-function forBottomOverflow(array, i){
-    var mainBlockBottom = array[i].querySelector('.main-block-bottom');
+function forBottomOverflow(array, k){
+    var mainBlockBottom = array[k].querySelector('.main-block-bottom');
     var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-    array[i].style.transition = "0s";
-    array[i].style.height = "" + mainBlockBottomstyle.height + "px";
+    array[k].style.transition = "0s";
+    array[k].style.height = "" + mainBlockBottomstyle.height + "px";
 }
 
 var mainBlockBottomHtml = document.querySelector('.main-block-bottom-html');
 var mainBlockBottomCard = mainBlockBottomHtml.querySelector('.main-block-bottom-card');
-var infoArray = ['Roulette', 'atele', 'holen'];
-for(var i = 0; i <= 2; i++){
+var HtmlIDArray = ['first-plus', 'table', 'cv', 'git'];
+var HtmlNameArray = ['First+', 'Table', 'CV', 'Git'];
+var HtmlProjectArray = ['Java Script / Project 2', 'Java Script / Project 3', 'Java Script / Project 4', 'Java Script / Project 5'];
+var HtmlBackArray = ['HTML_2.jpg', 'HTML_3.png', 'HTML_1.webp', 'HTML_5.jpg'];
+var HtmllinkArray = ['', 'HTML_3.png', 'HTML_1.webp', 'HTML_5.jpg'];
+
+for(var d = HtmlNameArray.length-1; d >=0; d--){
+
     var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);
-    mainBlockBottomCard_clone.id = "main-block-bottom-card-"+infoArray[i]+"";
-    var mainJsCardTopTxt = mainBlockBottomCard.querySelector(".main-js-card-top-txt");
-    mainJsCardTopTxt.innerHTML = infoArray[i];
-    mainBlockBottomCard.before(mainBlockBottomCard_clone);
+    mainBlockBottomCard_clone.id = "main-block-bottom-card-"+HtmlIDArray[d]+"";
+    mainBlockBottomCard.after(mainBlockBottomCard_clone);
+
+    var mainJsCardTopTxt = mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt");
+    mainJsCardTopTxt.innerHTML = HtmlNameArray[d];
+    var mainJsCardCenterTxt = mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt");
+    mainJsCardCenterTxt.innerHTML = HtmlProjectArray[d];
+    var mainJsCard2 = mainBlockBottomCard_clone.querySelector(".main-js-card-2");
+    mainJsCard2.style.background = "url(png/js_group/"+HtmlBackArray[d]+") center/cover";
 }

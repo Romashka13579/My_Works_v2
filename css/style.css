@@ -352,6 +352,11 @@ body{
     grid-template-rows: repeat(2, 1fr);
 }
 
+.main-block-bottom-html{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
 .main-block-bottom-card{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -396,6 +401,12 @@ body{
     height: 42px;
     background: url(../png/javascript.png) center/cover;
     border-radius: 8px;
+}
+
+.main-js-card-top-htmlicon{
+    width: 42px;
+    height: 42px;
+    background: url(../png/html.png) center/cover;
 }
 
 .main-js-card-top-txt{
@@ -457,6 +468,10 @@ body{
 .main-js-card-2{
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+}
+
+.html-1{
+    background: url(../png/js_group/HTML_1.webp) center/cover;
 }
 
 .js-1{background: url(../png/js_group/south-american-casinos.jpg) center/cover;}

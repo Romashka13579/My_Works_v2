@@ -223,18 +223,29 @@ for(var d = HtmlNameArray.length-1; d >=0; d--){
 
 var mainBlockBottomCss = document.querySelector('.main-block-bottom-css');
 var mainBlockBottomCard = mainBlockBottomCss.querySelector('.main-block-bottom-card');
-var CssNameArray = ['Flex Box', 'Font Awes.', 'Startup', 'Position', 'Forms', 'Pseudo class', 'Pseudo class', 'Drop menu', 'Drop menu 2', 'Device Adapt.', 'Bootstr.', 'Figma' , 'Grid'];
-var CssBackArray = ['CSS_2.png', 'CSS_3.jpg', 'CSS_4.png', 'CSS_5.jpg', 'CSS_6.png', 'CSS_1.jpg', 'CSS_1.jpg', 'CSS_9.jpg', 'CSS_9.jpg', 'CSS_10.webp', 'CSS_11.png', 'CSS_12.png', 'CSS_14.png'];
+var CssNameArray = ['Flex Box', 'Font Awes.', 'Startup', 'Position', 'Forms', 'Pseudo class', 'Pseudo class', 'Drop menu', 'Drop menu 2', 'Device Adapt.', 'Bootstr.', 'Figma' , 'Grid', 'My Works', 'HTML CSS'];
+var CssBackArray = ['CSS_2.png', 'CSS_3.jpg', 'CSS_4.png', 'CSS_5.jpg', 'CSS_6.png', 'CSS_1.jpg', 'CSS_1.jpg', 'CSS_9.jpg', 'CSS_9.jpg', 'CSS_10.webp', 'CSS_11.png', 'CSS_12.png', 'CSS_14.png', 'CSS_15.jpeg', 'CSS_16.png'];
 var CssLinkArray = ['7', '8', '9', '10', '11', '12', '13', '14', '14.1', '15', '16', '17', '18', '19'];
 
 for(var d = CssNameArray.length-1; d >=0; d--){
     var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);
     mainBlockBottomCard.after(mainBlockBottomCard_clone);
+    console.log(d);
 
     mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = CssNameArray[d];
-    mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "CSS / Project "+(d+2)+"";
+    if(d == (CssNameArray.length - 1)){
+        mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "CSS / Project HTML-CSS";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/Project_HTML-CSS/";
+    }
+    else if(d == (CssNameArray.length - 2)){
+        mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "CSS / Project My Works";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/My_Works/";
+    }
+    else{
+        mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "CSS / Project "+(d+2)+"";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/Project_"+CssLinkArray[d]+"/";
+    }
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+CssBackArray[d]+") center/cover";
-    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/Project_"+CssLinkArray[d]+"/";
 }
 
 var mainBlockBottomJs = document.querySelector('.main-block-bottom-js');

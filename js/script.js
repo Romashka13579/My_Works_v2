@@ -132,9 +132,6 @@ mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
 
 javascriptBtnBack.addEventListener('click', () => {
-    // mainBlockBottom_array.forEach(mainBlockBottom => {
-    //     mainBlockBottom.style.transition = "margin-top 2000ms";
-    // });
     mainBlockBottomOverflow_array.forEach(mainBlockBottomOverflow => {
         mainBlockBottomOverflow.style.transition = "height 2000ms";
     });
@@ -168,10 +165,7 @@ myprojectsMenus.forEach(myprojectsMenu => {
         javascriptTxt.innerHTML = myprojectsMenuTxt.innerHTML;
         mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
         if (jsblockclicked == 0) {
-            var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
-            var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-            mainBlockBottomOverflow_array[myprojectstxti].style.transition = "0s";
-            mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
+            forBottomOverflow(mainBlockBottomOverflow_array, myprojectstxti);
         }
     });
 });
@@ -188,10 +182,7 @@ jsBtnRight.addEventListener('click', () => {
     dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
     mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
     if (jsblockclicked == 0) {
-        var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
-        var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-        mainBlockBottomOverflow_array[myprojectstxti].style.transition = "0s";
-        mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
+        forBottomOverflow(mainBlockBottomOverflow_array, myprojectstxti);
     }
 });
 
@@ -206,13 +197,25 @@ jsBtnLeft.addEventListener('click', () => {
     var dropdownTxt = document.querySelector('.dropdown-txt');
     dropdownTxt.innerHTML = myprojectsMenuTxt_2[myprojectstxti].innerHTML;
     mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
-    mainBlockBottom_array.forEach(mainBlockBottom => {
-        mainBlockBottom.style.transition = "0s";
-    });
     if (jsblockclicked == 0) {
-        var mainBlockBottom = mainBlockBottomOverflow_array[myprojectstxti].querySelector('.main-block-bottom');
-        var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
-        mainBlockBottomOverflow_array[myprojectstxti].style.transition = "0s";
-        mainBlockBottomOverflow_array[myprojectstxti].style.height = "" + mainBlockBottomstyle.height + "px";
+        forBottomOverflow(mainBlockBottomOverflow_array, myprojectstxti);
     }
 });
+
+function forBottomOverflow(array, i){
+    var mainBlockBottom = array[i].querySelector('.main-block-bottom');
+    var mainBlockBottomstyle = mainBlockBottom.getBoundingClientRect();
+    array[i].style.transition = "0s";
+    array[i].style.height = "" + mainBlockBottomstyle.height + "px";
+}
+
+var mainBlockBottomHtml = document.querySelector('.main-block-bottom-html');
+var mainBlockBottomCard = mainBlockBottomHtml.querySelector('.main-block-bottom-card');
+var infoArray = ['Roulette', 'atele', 'holen'];
+for(var i = 0; i <= 2; i++){
+    var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);
+    mainBlockBottomCard_clone.id = "main-block-bottom-card-"+infoArray[i]+"";
+    var mainJsCardTopTxt = mainBlockBottomCard.querySelector(".main-js-card-top-txt");
+    mainJsCardTopTxt.innerHTML = infoArray[i];
+    mainBlockBottomCard.before(mainBlockBottomCard_clone);
+}

@@ -10,7 +10,7 @@ body{
 .main{
     width: 100%;
     min-height: 100vh;
-    background: url(../png/js_group/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg) center/cover;
+    background: #aaf5ff8d;
 }
 
 .header{
@@ -345,6 +345,11 @@ body{
     background: #EAEAEA;
     padding: 35px 35px;
     box-sizing: border-box;
+}
+
+.main-block-bottom-css{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 }
 
 .main-block-bottom-card{

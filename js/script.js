@@ -123,7 +123,7 @@ var javascriptBtnBack = document.querySelector('.javascript-btn-back');
 var mainBlockBottom_array = document.querySelectorAll('.main-block-bottom');
 
 var jsblockclicked = 1;
-var myprojectstxti = 3;
+var myprojectstxti = 4;
 
 mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
@@ -268,4 +268,21 @@ for(var d = CplusNameArray.length-1; d >=0; d--){
     else{mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Arduino / Project "+(d+1)+"";}
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+CplusBackArray[d]+") center/cover";
     mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/"+CplusLinkArray[d]+"";
+}
+
+var mainBlockBottomCsharp = document.querySelector('.main-block-bottom-csharp');
+var mainBlockBottomCard = mainBlockBottomCsharp.querySelector('.main-block-bottom-card');
+var CsharpNameArray = ['Menu Test', 'Team Game'];
+var CsharpBackArray = ['CSHARP_2.png', 'CSHARP_3.jpg'];
+var CsharpLinkArray = ['Arduino_MatrixMax', 'Arduino_Seven-segment-indicator', 'Arduino_Project', 'Arduino_Other', 'QtCreator_1', 'QtCreator_2', 'QtCreator_2'];
+
+for(var d = CsharpNameArray.length-1; d >=0; d--){
+    var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);
+    mainBlockBottomCard.after(mainBlockBottomCard_clone);
+
+    mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = CsharpNameArray[d];
+    if(d >= 4){mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Qt Creator / Project "+(d-3)+"";}
+    else{mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Arduino / Project "+(d+1)+"";}
+    mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+CsharpBackArray[d]+") center/cover";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/"+CsharpLinkArray[d]+"";
 }

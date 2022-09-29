@@ -208,22 +208,47 @@ function forBottomOverflow(array, k){
 
 var mainBlockBottomHtml = document.querySelector('.main-block-bottom-html');
 var mainBlockBottomCard = mainBlockBottomHtml.querySelector('.main-block-bottom-card');
-var HtmlIDArray = ['first-plus', 'table', 'cv', 'git'];
 var HtmlNameArray = ['First+', 'Table', 'CV', 'Git'];
-var HtmlProjectArray = ['Java Script / Project 2', 'Java Script / Project 3', 'Java Script / Project 4', 'Java Script / Project 5'];
 var HtmlBackArray = ['HTML_2.jpg', 'HTML_3.png', 'HTML_1.webp', 'HTML_5.jpg'];
-var HtmllinkArray = ['', 'HTML_3.png', 'HTML_1.webp', 'HTML_5.jpg'];
 
 for(var d = HtmlNameArray.length-1; d >=0; d--){
-
     var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);
-    mainBlockBottomCard_clone.id = "main-block-bottom-card-"+HtmlIDArray[d]+"";
     mainBlockBottomCard.after(mainBlockBottomCard_clone);
 
-    var mainJsCardTopTxt = mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt");
-    mainJsCardTopTxt.innerHTML = HtmlNameArray[d];
-    var mainJsCardCenterTxt = mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt");
-    mainJsCardCenterTxt.innerHTML = HtmlProjectArray[d];
-    var mainJsCard2 = mainBlockBottomCard_clone.querySelector(".main-js-card-2");
-    mainJsCard2.style.background = "url(png/js_group/"+HtmlBackArray[d]+") center/cover";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = HtmlNameArray[d];
+    mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "HTML / Project "+(d+2)+"";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+HtmlBackArray[d]+") center/cover";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/Project_"+(d+2)+"/";
+}
+
+var mainBlockBottomCss = document.querySelector('.main-block-bottom-css');
+var mainBlockBottomCard = mainBlockBottomCss.querySelector('.main-block-bottom-card');
+var CssNameArray = ['Flex Box', 'Font Awes.', 'Startup', 'Position', 'Forms', 'Pseudo class', 'Pseudo class', 'Drop menu', 'Drop menu 2', 'Device Adapt.', 'Bootstr.', 'Figma' , 'Grid'];
+var CssBackArray = ['CSS_2.png', 'CSS_3.jpg', 'CSS_4.png', 'CSS_5.jpg', 'CSS_6.png', 'CSS_1.jpg', 'CSS_1.jpg', 'CSS_9.jpg', 'CSS_9.jpg', 'CSS_10.webp', 'CSS_11.png', 'CSS_12.png', 'CSS_14.png'];
+var CssLinkArray = ['7', '8', '9', '10', '11', '12', '13', '14', '14.1', '15', '16', '17', '18', '19'];
+
+for(var d = CssNameArray.length-1; d >=0; d--){
+    var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);
+    mainBlockBottomCard.after(mainBlockBottomCard_clone);
+
+    mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = CssNameArray[d];
+    mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "CSS / Project "+(d+2)+"";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+CssBackArray[d]+") center/cover";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/Project_"+CssLinkArray[d]+"/";
+}
+
+var mainBlockBottomJs = document.querySelector('.main-block-bottom-js');
+var mainBlockBottomCard = mainBlockBottomJs.querySelector('.main-block-bottom-card');
+var JsNameArray = ['Info / Date', 'Console Timer', 'Clock', 'Light', 'Range Input', 'Blank', 'Calcul', 'Slider', 'Statistic', 'Puncts', 'Card hover', 'Cards position', 'Mp3 player', 'Drop menu'];
+var JsBackArray = ['JS_2.png', 'JS_3.webp', 'JS_4.webp', 'JS_5.webp', 'JS_2.png', 'JS_2.png', 'JS_8.jpg', 'JS_9.png', 'JS_10.png', 'JS_2.png', 'JS_11.png', 'JS_12.jfif', 'JS_2.png', 'JS_14.png'];
+var JsLinkArray = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '10.1', '11', '12', '13', '14'];
+
+for(var d = JsNameArray.length-1; d >=0; d--){
+    var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);
+    mainBlockBottomCard.after(mainBlockBottomCard_clone);
+
+    mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = JsNameArray[d];
+    mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "Java Script / Project "+(JsLinkArray[d])+"";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+JsBackArray[d]+") center/cover";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/JavaScript_"+JsLinkArray[d]+"/";
 }

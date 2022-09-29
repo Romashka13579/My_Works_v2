@@ -349,7 +349,7 @@ body{
 
 .main-block-bottom-css{
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
 
 .main-block-bottom-html{
@@ -403,10 +403,18 @@ body{
     border-radius: 8px;
 }
 
-.main-js-card-top-htmlicon{
+.main-js-card-top-jsicon,
+.main-js-card-top-htmlicon,
+.main-js-card-top-cssicon{
     width: 42px;
     height: 42px;
     background: url(../png/html.png) center/cover;
+}
+
+.main-js-card-top-cssicon{background: url(../png/css3.png) center/cover;}
+.main-js-card-top-jsicon{
+    background: url(../png/javascript.png) center/cover;
+    border-radius: 8px;
 }
 
 .main-js-card-top-txt{
@@ -416,8 +424,12 @@ body{
     font-weight: 600;
     font-size: 24px;
     text-align: center;
-    color: #000000;
+    color: hsl(0, 0%, 0%);
 }
+
+/* .main-js-card-top-txt-css{
+    font-size: 20px;
+} */
 
 .main-js-card-center-txt{
     font-family: 'Inter';
@@ -470,25 +482,6 @@ body{
     border-bottom-right-radius: 25px;
 }
 
-.html-1{
-    background: url(../png/js_group/HTML_1.webp) center/cover;
-}
-
-.js-1{background: url(../png/js_group/south-american-casinos.jpg) center/cover;}
-.js-2{background: url(../png/js_group/javascript.png) center/cover;}
-.js-3{background: url(../png/js_group/134466527-stopwatch-watch-or-timer-in-hand-stop-time-on-competition-businessman-time-control-concept-cartoon-f.webp) center/cover;}
-.js-4{background: url(../png/js_group/yellow-Wall-Clock-Lime-Modern-Kitchen-Clock-Watch-Home-Decor-Living-Room-Clock-Tropical-Fruit-Wall.jpg_Q90.jpg_.webp) center/cover;}
-.js-5{
-    background: url(../png/js_group/file-20191003-52832-1sexfyt.webp) center/cover;
-    background-position-x: 222px;
-}
-.js-6{background: url(../png/js_group/javascript.png) center/cover;}
-.js-7{background: url(../png/js_group/javascript.png) center/cover;}
-.js-8{background: url(../png/js_group/calculator-with-modern-flat-style_3322-74.jpg) center/cover;}
-.js-9{background: url(../png/js_group/maxresdefault\ \(1\)\ 2.png) center/cover;}
-.js-10{background: url(../png/js_group/download.png) center/cover;}
-.js-10-1{background: url(../png/js_group/javascript.png) center/cover;}
-.js-11{background: url(../png/js_group/One-Punch-Man-Business-Card-HTML-CSS.png) center/cover;}
-.js-12{background: url(../png/js_group/javascript.png) center/cover;}
-.js-13{background: url(../png/js_group/xy.jfif) center/cover;}
-.js-14{background: url(../png/js_group/dd\ menu.png) center/cover;}
+.html-1{background: url(../png/js_group/HTML_1.webp) center/cover;}
+.css-1{background: url(../png/js_group/CSS_1.jpg) center/cover;}
+.js-1{background: url(../png/js_group/JS_1.jpg) center/cover;}

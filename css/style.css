@@ -464,6 +464,7 @@ body{
 .main-js-card-bottom-txt-block{
     display: flex;
     width: 82px;
+    text-decoration: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -478,17 +479,18 @@ body{
     font-size: 14px;
     text-align: center;
     color: #40939E;
+    transition: color 500ms;
 }
 
 .main-js-arrow{
     font-size: 14px;
     color: #40939E;
+    transition: color 500ms;
 }
 
 .main-js-card-bottom-txt-block:hover{width: 88px;}
 .main-js-card-bottom-txt-block:hover > .main-js-card-bottom-txt,
 .main-js-card-bottom-txt-block:hover > .main-js-arrow{
-    transition: color 500ms;
     color: #bdaa1c;
 }
 

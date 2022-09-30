@@ -123,7 +123,7 @@ var javascriptBtnBack = document.querySelector('.javascript-btn-back');
 var mainBlockBottom_array = document.querySelectorAll('.main-block-bottom');
 
 var jsblockclicked = 1;
-var myprojectstxti = 2;
+var myprojectstxti = 0;
 
 mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
@@ -218,7 +218,8 @@ for(var d = HtmlNameArray.length-1; d >=0; d--){
     mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = HtmlNameArray[d];
     mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "HTML / Project "+(d+2)+"";
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+HtmlBackArray[d]+") center/cover";
-    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/Project_"+(d+2)+"/";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-txt-block").href = "https://romashka13579.github.io/Project_"+(d+2)+"/";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/Project_"+(d+2)+"/";
 }
 
 var mainBlockBottomCss = document.querySelector('.main-block-bottom-css');
@@ -301,7 +302,7 @@ for(var d = CsharpNameArray.length-1; d >=0; d--){
     mainBlockBottomCard.after(mainBlockBottomCard_clone);
 
     mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = CsharpNameArray[d];
-    mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Unity / Project "+(d+1)+"";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C# / Unity / Project "+(d+1)+"";
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+CsharpBackArray[d]+") center/cover";
     mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/"+CsharpLinkArray[d]+"";
 }

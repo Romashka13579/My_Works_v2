@@ -123,7 +123,7 @@ var javascriptBtnBack = document.querySelector('.javascript-btn-back');
 var mainBlockBottom_array = document.querySelectorAll('.main-block-bottom');
 
 var jsblockclicked = 1;
-var myprojectstxti = 1;
+var myprojectstxti = 3;
 
 mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
@@ -271,7 +271,8 @@ for(var d = JsNameArray.length-1; d >=0; d--){
     mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = JsNameArray[d];
     mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "Java Script / Project "+(JsLinkArray[d])+"";
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+JsBackArray[d]+") center/cover";
-    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/JavaScript_"+JsLinkArray[d]+"/";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-txt-block").href = "https://romashka13579.github.io/JavaScript_"+JsLinkArray[d]+"/";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/JavaScript_"+JsLinkArray[d]+"";
 }
 
 var mainBlockBottomCplus = document.querySelector('.main-block-bottom-cplus');
@@ -287,18 +288,23 @@ for(var d = CplusNameArray.length-1; d >=0; d--){
     mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = CplusNameArray[d];
     if(d == 0){
         mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / TinKerCad";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-txt-block").href = "https://www.tinkercad.com/users/h70OFn5l97m";
         mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://www.tinkercad.com/users/h70OFn5l97m";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").style.background = "url(png/tinkercad.png) center/cover";
     }
     else if(d >= 5){
         mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Qt Creator / Project "+(d-4)+"";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-txt-block").href = "https://github.com/Romashka13579/"+CplusLinkArray[d]+"";
         mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/"+CplusLinkArray[d]+"";
     }
     else{
         mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Arduino / Project "+(d)+"";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-txt-block").href = "https://github.com/Romashka13579/"+CplusLinkArray[d]+"";
         mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/"+CplusLinkArray[d]+"";
     }
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+CplusBackArray[d]+") center/cover";
 }
+mainBlockBottomCard.querySelector(".main-js-card-bottom-jsicon").style.background = "url(png/eolymp.png) center/cover";
 
 var mainBlockBottomCsharp = document.querySelector('.main-block-bottom-csharp');
 var mainBlockBottomCard = mainBlockBottomCsharp.querySelector('.main-block-bottom-card');

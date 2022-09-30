@@ -301,7 +301,7 @@ for(var d = CsharpNameArray.length-1; d >=0; d--){
     mainBlockBottomCard.after(mainBlockBottomCard_clone);
 
     mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = CsharpNameArray[d];
-    mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Arduino / Project "+(d+1)+"";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C++ / Unity / Project "+(d+1)+"";
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+CsharpBackArray[d]+") center/cover";
     mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/"+CsharpLinkArray[d]+"";
 }

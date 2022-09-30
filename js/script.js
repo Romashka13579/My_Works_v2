@@ -123,7 +123,7 @@ var javascriptBtnBack = document.querySelector('.javascript-btn-back');
 var mainBlockBottom_array = document.querySelectorAll('.main-block-bottom');
 
 var jsblockclicked = 1;
-var myprojectstxti = 0;
+var myprojectstxti = 1;
 
 mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
@@ -219,14 +219,14 @@ for(var d = HtmlNameArray.length-1; d >=0; d--){
     mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "HTML / Project "+(d+2)+"";
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+HtmlBackArray[d]+") center/cover";
     mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-txt-block").href = "https://romashka13579.github.io/Project_"+(d+2)+"/";
-    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/Project_"+(d+2)+"/";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/Project_"+(d+2)+"";
 }
 
 var mainBlockBottomCss = document.querySelector('.main-block-bottom-css');
 var mainBlockBottomCard = mainBlockBottomCss.querySelector('.main-block-bottom-card');
-var CssNameArray = ['Flex Box', 'Font Awes.', 'Startup', 'Position', 'Forms', 'Pseudo class', 'Pseudo class', 'Drop menu', 'Drop menu 2', 'Device Adapt.', 'Bootstr.', 'Figma' , 'Grid', 'My Works', 'HTML CSS'];
-var CssBackArray = ['CSS_2.png', 'CSS_3.jpg', 'CSS_4.png', 'CSS_5.jpg', 'CSS_6.png', 'CSS_1.jpg', 'CSS_1.jpg', 'CSS_9.jpg', 'CSS_9.jpg', 'CSS_10.webp', 'CSS_11.png', 'CSS_12.png', 'CSS_14.png', 'CSS_15.jpeg', 'CSS_16.png'];
-var CssLinkArray = ['7', '8', '9', '10', '11', '12', '13', '14', '14.1', '15', '16', '17', '18', '19'];
+var CssNameArray = ['Flex Box', 'Font Awes.', 'Startup', 'Position', 'Forms', 'Pseudo class', 'Pseudo class', 'Drop menu', 'Drop menu 2', 'Device Adapt.', 'Ulkit', 'Figma' , 'Grid', 'My Works', 'HTML CSS'];
+var CssBackArray = ['CSS_2.png', 'CSS_3.jpg', 'CSS_4.png', 'CSS_5.jpg', 'CSS_6.png', 'CSS_1.jpg', 'CSS_1.jpg', 'CSS_9.jpg', 'CSS_9.jpg', 'CSS_10.webp', 'CSS_11.jpeg', 'CSS_12.png', 'CSS_14.png', 'CSS_15.jpeg', 'CSS_16.png'];
+var CssLinkArray = ['7', '8', '9', '10', '11', '12', '13', '14', '14.1', '15', '16', '18', '19'];
 
 for(var d = CssNameArray.length-1; d >=0; d--){
     var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);
@@ -236,15 +236,24 @@ for(var d = CssNameArray.length-1; d >=0; d--){
     mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = CssNameArray[d];
     if(d == (CssNameArray.length - 1)){
         mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "CSS / Project HTML-CSS";
-        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/Project_HTML-CSS/";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-txt-block").href = "https://romashka13579.github.io/Project_HTML-CSS/";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/Project_HTML-CSS";
     }
     else if(d == (CssNameArray.length - 2)){
         mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "CSS / Project My Works";
-        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/My_Works/";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-txt-block").href = "https://romashka13579.github.io/My_Works/";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/My_Works";
+    }
+    else if(CssLinkArray[d] == "18"){
+        mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "CSS / Project My Works";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-txt-block").href = "https://github.com/Romashka13579/Project_18";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://www.figma.com/files/user/1069152158594079452?fuid=1069152158594079452";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").style.background = "url(png/figma.png) center/cover"
     }
     else{
         mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "CSS / Project "+(d+2)+"";
-        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://romashka13579.github.io/Project_"+CssLinkArray[d]+"/";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-txt-block").href = "https://romashka13579.github.io/Project_"+CssLinkArray[d]+"/";
+        mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/Romashka13579/Project_"+CssLinkArray[d]+"";
     }
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+CssBackArray[d]+") center/cover";
 }

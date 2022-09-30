@@ -123,7 +123,7 @@ var javascriptBtnBack = document.querySelector('.javascript-btn-back');
 var mainBlockBottom_array = document.querySelectorAll('.main-block-bottom');
 
 var jsblockclicked = 1;
-var myprojectstxti = 3;
+var myprojectstxti = 2;
 
 mainBlockBottomOverflow_array[myprojectstxti].style.display = "block";
 mainBlockBottomOverflow_array[myprojectstxti].style.height = "0px";
@@ -319,5 +319,6 @@ for(var d = CsharpNameArray.length-1; d >=0; d--){
     mainBlockBottomCard_clone.querySelector(".main-js-card-top-txt").innerHTML = CsharpNameArray[d];
     mainBlockBottomCard_clone.querySelector(".main-js-card-center-txt").innerHTML = "C# / Unity / Project "+(d+1)+"";
     mainBlockBottomCard_clone.querySelector(".main-js-card-2").style.background = "url(png/js_group/"+CsharpBackArray[d]+") center/cover";
+    mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-txt-block").href = "https://github.com/"+CsharpLinkArray[d]+"";
     mainBlockBottomCard_clone.querySelector(".main-js-card-bottom-jsicon").href = "https://github.com/"+CsharpLinkArray[d]+"";
 }

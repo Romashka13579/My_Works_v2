@@ -492,13 +492,17 @@ body{
 .main-js-card-bottom-txt-block:hover > .main-js-card-bottom-txt,
 .main-js-card-bottom-txt-block:hover > .main-js-arrow{
     color: #bdaa1c;
+    background: url(../png/eolymp.png);
 }
 
-.main-js-card-bottom-jsicon{
+.main-js-card-bottom-jsicon,
+.main-js-card-bottom-pythonicon{
     width: 42px;
     height: 42px;
     background: url(../png/github.png) center/cover;
 }
+
+.main-js-card-bottom-pythonicon{background: url(../png/eolymp.png) center/cover;}
 
 .main-js-card-2{
     border-top-right-radius: 25px;

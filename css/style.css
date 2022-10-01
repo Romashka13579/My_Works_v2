@@ -4,13 +4,13 @@
 }
 
 body{
+    min-height: 100vh;
     margin: 0px;
+    background: #aaf5ff8d;
 }
 
 .main{
     width: 100%;
-    min-height: 100vh;
-    background: #aaf5ff8d;
 }
 
 .header{
@@ -243,7 +243,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 110px 50px;
+    padding: 110px 50px 40px 50px;
     box-sizing: border-box;
 }
 

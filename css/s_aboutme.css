@@ -63,6 +63,29 @@
     background: linear-gradient(180deg, rgba(255,255,255,0) 40%, rgba(218,218,218,1) 100%);
 }
 
+.moving-card-1-flags-Ukraine-icon,
+.moving-card-1-flags-Poland-icon{
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    top: 5px;
+    left: 0px;
+    background: url(../png/Ukraine.png) center/cover;
+}
+
+.moving-card-1-flags-text{
+    position: absolute;
+    width: 130px;
+    bottom: 5px;
+    left: 5px;
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(56, 56, 56);
+}
+
+.moving-card-1-flags-Poland-icon{background: url(../png/Poland.png) center/cover;}
+
 .main-moving-card input{
     display: none;
 }
@@ -71,7 +94,8 @@
     height: 20px;
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 10px;
 }
 
 .label-Ukraine,
@@ -79,9 +103,16 @@
     display: block;
     width: 20px;
     height: 20px;
-    background: black;
-    border-radius: 50%;
+    font-size: 20px;
+    color: #808080;
+    transition: color 500ms;
 }
+
+#input-Ukraine:checked ~ .moving-card-labels .label-Ukraine,
+#input-Poland:checked ~ .moving-card-labels .label-Poland{color: rgb(56, 56, 56);}
+
+.label-Ukraine:hover,
+.label-Poland:hover{color: rgb(56, 56, 56);}
 
 #input-Ukraine:checked ~ .moving-card-1-flags-overflow .moving-card-1-flags-full{left: 0px;}
 #input-Poland:checked ~ .moving-card-1-flags-overflow .moving-card-1-flags-full{left: -28vw;}

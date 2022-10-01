@@ -20,7 +20,7 @@
 
 .main-moving-card{
     width: 28vw;
-    height: auto;
+    height: fit-content;
     background: #DADADA;
     border-radius: 10px;
     -webkit-box-shadow: 4px 4px 6px -4px rgba(0, 0, 0, 0.2);
@@ -81,7 +81,7 @@
     font-family: 'Inter';
     font-size: 12px;
     font-weight: 600;
-    color: rgb(56, 56, 56);
+    color: #31575c;
 }
 
 .moving-card-1-flags-Poland-icon{background: url(../png/Poland.png) center/cover;}
@@ -96,6 +96,7 @@
     display: flex;
     justify-content: space-between;
     margin: 10px;
+    align-items: center;
 }
 
 .label-Ukraine,
@@ -108,6 +109,32 @@
     transition: color 500ms;
 }
 
+.label-back{
+    width: 18vw;
+    height: 2px;
+    margin: 10px;
+    border-radius: 5px;
+    background: #808080;
+}
+
+.main-moving-card-txt{
+    padding-left: 10px;
+    margin: 15px 20px;
+}
+
+.main-moving-card-txt li{
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(56, 56, 56);
+    margin-bottom: 15px;
+    transition: color 500ms;
+}
+
+.main-moving-card-txt li:hover{
+    color: #40939E;
+}
+
 #input-Ukraine:checked ~ .moving-card-labels .label-Ukraine,
 #input-Poland:checked ~ .moving-card-labels .label-Poland{color: rgb(56, 56, 56);}
 
@@ -116,3 +143,49 @@
 
 #input-Ukraine:checked ~ .moving-card-1-flags-overflow .moving-card-1-flags-full{left: 0px;}
 #input-Poland:checked ~ .moving-card-1-flags-overflow .moving-card-1-flags-full{left: -28vw;}
+
+.moving-card-2-top-block{
+    display: flex;
+}
+
+.moving-card-2-image{
+    margin: 10px 0px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: url(../png/js_group/IMG_20191108_211653.jpg) center/cover;
+    border: 5px solid #40939E;
+    box-sizing: border-box;
+}
+
+.moving-card-2-icon-1,
+.moving-card-2-icon-2{
+    margin: auto;
+    margin-top: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url(../png/instagram.png) center/cover;
+    border: 3px solid #40939E;
+    box-sizing: border-box;
+}
+
+.moving-card-2-icon-2{background: url(../png/github.png) center/cover;}
+
+.moving-card-2-txt{
+    padding-left: 10px;
+    margin: 15px 20px;
+}
+
+.moving-card-2-txt li{
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(56, 56, 56);
+    margin-bottom: 15px;
+    transition: color 500ms;
+}
+
+.moving-card-2-txt li:hover{
+    color: #40939E;
+}

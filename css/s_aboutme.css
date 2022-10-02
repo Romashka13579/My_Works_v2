@@ -13,13 +13,25 @@
     gap: 35px;
 }
 
-.main-moving-card-place{
+.top-blocks{
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+}
+
+.main-button{
+    width: 80px;
+    height: 40px;
+    background: #DADADA;
+}
+
+.main-moving-card-place{
+    display: flex;
+    justify-content: space-around;
 }
 
 .main-moving-card{
-    width: 28vw;
+    width: 26vw;
     height: fit-content;
     background: #DADADA;
     border-radius: 10px;
@@ -27,18 +39,19 @@
     -moz-box-shadow: 4px 4px 6px -4px rgba(0, 0, 0, 0.2);
     box-shadow: 4px 4px 6px -4px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    z-index: 4;
 }
 
 .moving-card-1-flags-overflow{
     position: relative;
-    width: 28vw;
+    width: 26vw;
     height: 180px;
     overflow: hidden;
 }
 
 .moving-card-1-flags-full{
     position: absolute;
-    width: 56vw;
+    width: 52vw;
     display: grid;
     width: max-content;
     grid-auto-flow: column;
@@ -47,18 +60,18 @@
 }
 
 .moving-card-1-flags-Ukraine{
-    width: 28vw;
+    width: 26vw;
     background: url(../png/groups/Ukraine-2109x1406.jpg) center/cover;
 }
 
 .moving-card-1-flags-Poland{
-    width: 28vw;
+    width: 26vw;
     background: url(../png/groups/Wroclaw1170.jpg) center/cover;
 }
 
 .moving-card-1-flags-gradient{
     position: relative;
-    width: 28vw;
+    width: 26vw;
     height: 180px;
     background: linear-gradient(180deg, rgba(255,255,255,0) 40%, rgba(218,218,218,1) 100%);
 }

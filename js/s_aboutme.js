@@ -181,6 +181,12 @@ mainMovingCards.forEach(mainMovingCard => {
                 }
             });
         }
+        mainButton.addEventListener('click', () => {
+            if(movingclicked == false){
+                mainMovingCard.style.opacity = 1;
+                mainMovingCard_clone.remove();
+            }
+        });
     });
 });
 

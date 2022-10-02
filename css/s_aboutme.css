@@ -22,7 +22,21 @@
 .main-button{
     width: 80px;
     height: 40px;
+    border: 5px solid #DADADA;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: #F3F3F3;
+    transition: all 500ms;
+}
+
+.main-button-inside{
+    width: 24px;
+    height: 24px;
     background: #DADADA;
+    border-radius: 50%;
+    margin: 3px;
+    margin-left: 43px;
+    transition: all 500ms;
 }
 
 .main-moving-card-place{
@@ -155,7 +169,7 @@
 .label-Poland:hover{color: rgb(56, 56, 56);}
 
 #input-Ukraine:checked ~ .moving-card-1-flags-overflow .moving-card-1-flags-full{left: 0px;}
-#input-Poland:checked ~ .moving-card-1-flags-overflow .moving-card-1-flags-full{left: -28vw;}
+#input-Poland:checked ~ .moving-card-1-flags-overflow .moving-card-1-flags-full{left: -26vw;}
 
 .moving-card-2-top-block{
     display: flex;

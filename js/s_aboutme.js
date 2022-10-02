@@ -115,53 +115,72 @@ dropdownBtn.addEventListener('focusout', () => {
     });
 });
 
+var mainButton = document.querySelector('.main-button');
+var mainButtonInside = document.querySelector('.main-button-inside');
 var mainMovingCards = document.querySelectorAll('.main-moving-card');
 var main = document.querySelector('.main');
 
 var movingpresesed = false;
+var movingclicked = false;
+
+mainButton.addEventListener('click', () => {
+    if(movingclicked == false){
+        movingclicked = true;
+        mainButton.style.borderColor = "#40939E";
+        mainButtonInside.style.background = "#40939E";
+        mainButtonInside.style.marginLeft = "3px";
+    }
+    else if(movingclicked == true){
+        movingclicked = false;
+        mainButton.style.borderColor = "#DADADA";
+        mainButtonInside.style.background = "#DADADA";
+        mainButtonInside.style.marginLeft = "43px";
+    }
+});
 
 mainMovingCards.forEach(mainMovingCard => {
     mainMovingCard.addEventListener('mousedown', (e) => {
-        movingpresesed = true;
-        var x01 = e.clientX;
-        var y01 = e.clientX;
-        var x = e.clientX - mainMovingCard.offsetLeft;
-        var y = e.clientY - mainMovingCard.offsetTop;
-
-        var mainMovingCard_clone = mainMovingCard.cloneNode(true);
-        mainMovingCard_clone.style.position = "absolute";
-        main.append(mainMovingCard_clone);
-
-        ForMousemove(e, mainMovingCard_clone, x, y);
-        mainMovingCard.style.opacity = 0;
-        mainMovingCard_clone.addEventListener('mousemove', (e) => {
-            if (movingpresesed == true) {
-                ForMousemove(e, mainMovingCard_clone, x, y);
-            }
-        });
-        mainMovingCard_clone.addEventListener('mouseup', (e) => {
-            movingpresesed = false;
-            console.log(movingpresesed);
-            var x1 = e.clientX;
-            var y1 = e.clientY;
-            for (let i = 0; i < mainMovingCards.length; i++) {
-                if((x1 > mainMovingCards[i].offsetLeft && x1 < (mainMovingCards[i].offsetWidth + mainMovingCards[i].offsetLeft)) && (y1 > mainMovingCards[i].offsetTop && y1 < (mainMovingCards[i].offsetHeight + mainMovingCards[i].offsetTop))){
-                    mainMovingCard.style.opacity = 1;
-                    mainMovingCards[i].after(mainMovingCard);
-                    if(x01>x1){
-                        mainMovingCards[i].before(mainMovingCard);
-                    }
-                    else if(x01<x1){
+        if(movingclicked == true){
+            movingpresesed = true;
+            var x01 = e.clientX;
+            var x = e.clientX - mainMovingCard.offsetLeft;
+            var y = e.clientY - mainMovingCard.offsetTop;
+    
+            var mainMovingCard_clone = mainMovingCard.cloneNode(true);
+            mainMovingCard_clone.style.position = "absolute";
+            main.append(mainMovingCard_clone);
+    
+            ForMousemove(e, mainMovingCard_clone, x, y);
+            mainMovingCard.style.opacity = 0;
+            mainMovingCard_clone.addEventListener('mousemove', (e) => {
+                if (movingpresesed == true) {
+                    ForMousemove(e, mainMovingCard_clone, x, y);
+                }
+            });
+            mainMovingCard_clone.addEventListener('mouseup', (e) => {
+                movingpresesed = false;
+                console.log(movingpresesed);
+                var x1 = e.clientX;
+                var y1 = e.clientY;
+                for (let i = 0; i < mainMovingCards.length; i++) {
+                    if((x1 > mainMovingCards[i].offsetLeft && x1 < (mainMovingCards[i].offsetWidth + mainMovingCards[i].offsetLeft)) && (y1 > mainMovingCards[i].offsetTop && y1 < (mainMovingCards[i].offsetHeight + mainMovingCards[i].offsetTop))){
+                        mainMovingCard.style.opacity = 1;
                         mainMovingCards[i].after(mainMovingCard);
+                        if(x01>x1){
+                            mainMovingCards[i].before(mainMovingCard);
+                        }
+                        else if(x01<x1){
+                            mainMovingCards[i].after(mainMovingCard);
+                        }
+                        mainMovingCard_clone.remove();
                     }
-                    mainMovingCard_clone.remove();
+                    else{
+                        mainMovingCard.style.opacity = 1;
+                        mainMovingCard_clone.remove();
+                    }
                 }
-                else{
-                    mainMovingCard.style.opacity = 1;
-                    mainMovingCard_clone.remove();
-                }
-            }
-        });
+            });
+        }
     });
 });
 

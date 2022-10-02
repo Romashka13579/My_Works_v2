@@ -234,4 +234,7 @@
     font-size: 14px;
     font-weight: bold;
     color: rgb(56, 56, 56);
+    transition: color 500ms;
 }
+
+.moving-card-3-block-txt:hover{color: #40939E;}

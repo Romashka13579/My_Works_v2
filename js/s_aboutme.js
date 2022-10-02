@@ -114,3 +114,36 @@ dropdownBtn.addEventListener('focusout', () => {
         }
     });
 });
+
+var mainMovingCards = document.querySelectorAll('.main-moving-card');
+var main = document.querySelector('.main');
+
+var movingpresesed = false;
+
+mainMovingCards.forEach(mainMovingCard => {
+    mainMovingCard.addEventListener('mousedown', (e) => {
+        movingpresesed = true;
+        var x = e.clientX;
+        var y = e.clientY;
+        
+        var mainMovingCard_clocne = mainMovingCard.cloneNode(true);
+        mainMovingCard_clocne.style.position = "absolute";
+        main.append(mainMovingCard_clocne);
+        mainMovingCard.addEventListener('mouseup', () => {
+            movingpresesed = false;
+        });
+
+        ForMousemove(e, mainMovingCard_clocne, (x-mainMovingCard.offsetLeft), (y-mainMovingCard.offsetTop));
+        mainMovingCard_clocne.addEventListener('mousemove', (e) => {
+            if(movingpresesed == true){
+                console.log(movingpresesed);
+                ForMousemove(e, mainMovingCard_clocne, (x-mainMovingCard.offsetLeft), (y-mainMovingCard.offsetTop));
+            }
+        });
+    });
+});
+
+function ForMousemove(e, mainMovingCard_clocne, x, y) {
+    mainMovingCard_clocne.style.left = (e.clientX - x)+"px";
+    mainMovingCard_clocne.style.top = (e.clientY - y)+"px";
+}

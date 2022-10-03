@@ -268,19 +268,34 @@
 
 .main-arduino{
     display: grid;
-    grid-template-columns: 6fr 4fr;
+    grid-template-columns: 5fr 5fr;
     gap: 30px;
 }
 
 .main-arduino-picture{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 4px 1fr;
     height: 400px;
     -webkit-clip-path: polygon(16% 0, 100% 0, 100% 84%, 84% 100%, 0 100%, 0 16%);
     clip-path: polygon(16% 0, 100% 0, 100% 84%, 84% 100%, 0 100%, 0 16%);
-    border: 4px solid black;
+    border: 4px solid #40939E;
+    box-sizing: border-box;
 }
 
-.main-arduino-pic-1{
-    background: url(../png/js_group/CPLUS_4) center/cover;
+.main-arduino-line{background: #40939E;}
+.main-arduino-pic-1{background: url(../png/js_group/CPLUS_4) center/cover;}
+.main-arduino-pic-2{background: url(../png/js_group/Arduino) center/cover;}
+
+.main-arduino-downloads{
+    display: grid;
+    gap: 30px;
+    grid-template-rows: 1fr 120px;
+}
+
+.main-arduino-downloads-text{
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Inter';
+    font-weight: 500;
 }

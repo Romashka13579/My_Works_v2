@@ -159,7 +159,6 @@ mainMovingCards.forEach(mainMovingCard => {
             });
             mainMovingCard_clone.addEventListener('mouseup', (e) => {
                 movingpresesed = false;
-                console.log(movingpresesed);
                 var x1 = e.clientX;
                 var y1 = e.clientY;
                 for (let i = 0; i < mainMovingCards.length; i++) {

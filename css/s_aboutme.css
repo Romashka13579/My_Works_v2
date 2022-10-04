@@ -311,7 +311,7 @@
     margin: auto;
 }
 
-.downloads-link-1{background: url(../png/word.png) center/cover;}
+.downloads-link-1{background: url(../png/photos.png) center/cover;}
 .downloads-link-2{background: url(../png/microsoft-powerpoint.png) center/cover;}
 .downloads-link-3{background: url(../png/microsoft-powerpoint.png) center/cover;}
 .downloads-link-4{background: url(../png/microsoft-powerpoint.png) center/cover;}
@@ -321,5 +321,5 @@
     font-size: 30px;
     bottom: 0px;
     right: 0px;
-    color: #6e6e6e;
+    color: rgb(56, 56, 56);
 }

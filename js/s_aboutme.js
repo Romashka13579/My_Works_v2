@@ -196,9 +196,13 @@ function ForMousemove(e, mainMovingCard_clone, x, y) {
 }
 
 var mainArduinoDownloadsLinks = document.querySelectorAll('.main-arduino-downloads-link');
+var ArduinoDownloads = ["./downloads/ELyceum pic.png", "ELyceum.lnk", "ELyceum\ English.pptx", "ELyceum\ v0.pptx"];
+var adi = 0;
 
 mainArduinoDownloadsLinks.forEach(mainArduinoDownloadsLink => {
     mainArduinoDownloadsLink.addEventListener('click', () => {
-
+        mainArduinoDownloadsLink.setAttribute("download", );
+        console.log("a");
+        adi++;
     });
 });

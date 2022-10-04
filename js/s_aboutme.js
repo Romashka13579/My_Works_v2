@@ -195,14 +195,29 @@ function ForMousemove(e, mainMovingCard_clone, x, y) {
     mainMovingCard_clone.style.top = (e.clientY - y) + "px";
 }
 
-var mainArduinoDownloadsLinks = document.querySelectorAll('.main-arduino-downloads-link');
-var ArduinoDownloads = ["./downloads/ELyceum pic.png", "ELyceum.lnk", "ELyceum\ English.pptx", "ELyceum\ v0.pptx"];
-var adi = 0;
+var hnmtlcssBtnLeft = document.querySelector('.html-css-project-btn-left');
+var hnmtlcssBtnRight = document.querySelector('.html-css-project-btn-right');
+var mainHtmlCssProjectPictureOverflow = document.querySelector('.main-html-css-project-picture-overflow');
+var mainHtmlCssProjectPictureFull = document.querySelector('.main-html-css-project-picture-full');
+var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');
 
-mainArduinoDownloadsLinks.forEach(mainArduinoDownloadsLink => {
-    mainArduinoDownloadsLink.addEventListener('click', () => {
-        mainArduinoDownloadsLink.setAttribute("download", );
-        console.log("a");
-        adi++;
-    });
+var i_hc = 1;
+var slideId5;
+var x_hc = -1;
+
+var htmlcssFirstClone = mainHtmlCssProjectPicture[0].cloneNode(true);
+var htmlcssLastClone = mainHtmlCssProjectPicture[mainHtmlCssProjectPicture.length - 1].cloneNode(true);
+
+htmlcssFirstClone.ID = "html-css-first-clone";
+htmlcssLastClone.ID = "html-css-lest-clone";
+
+mainHtmlCssProjectPictureFull.append(htmlcssFirstClone);
+mainHtmlCssProjectPictureFull.prepend(htmlcssLastClone);
+
+hnmtlcssBtnLeft.addEventListener('click', () => {
+    
+});
+
+hnmtlcssBtnRight.addEventListener('click', () => {
+
 });

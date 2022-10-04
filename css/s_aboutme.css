@@ -323,3 +323,68 @@
     right: 0px;
     color: rgb(56, 56, 56);
 }
+
+.main-html-css-project{
+    display: grid;
+    grid-template-columns: 55vw 1fr;
+    gap: 30px;
+    height: fit-content;
+}
+
+.main-html-css-project-picture-overflow{
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+}
+
+.main-html-css-project-picture-full{
+    position: absolute;
+    width: 275vw;
+}
+
+.main-html-css-project-picture{
+    position: relative;
+    float: left;
+}
+
+.html-css-picture-1{background: url(../png/groups/maxresdefault\ \(1\)\ 2.png) center/cover;}
+.html-css-picture-2{background: url(../png/groups/montenegro-hero\ 1.png) center/cover;}
+.html-css-picture-3{background: url(../png/groups/OO_PM_Drone_ChurchIsland_Twilight_0867_MASTER\ 1.png) center/cover;}
+.html-css-picture-4{background: url(../png/groups/OO_PM_Drone_Local_Views_0016_MASTER\ 1.png) center/cover;}
+.html-css-picture-5{background: url(../png/groups/Rovinj-15\ 1.png) center/cover;}
+
+.main-html-css-project-picture-gradient{
+    width: 55vw;
+    height: 400px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 14.37%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.main-html-css-project-btns{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-html-css-project-btn-2,
+.main-html-css-project-btn-1{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: none;
+    outline: none;
+    border: 3.5px solid white;
+    margin: 10px;
+    justify-content: space-around;
+    padding: 0px;
+    align-items: center;
+}
+
+.html-css-project-btn-left,
+.html-css-project-btn-right{
+    font-size: 30px;
+    color: white;
+}

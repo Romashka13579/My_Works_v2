@@ -339,7 +339,11 @@
 
 .main-html-css-project-picture-full{
     position: absolute;
-    width: 275vw;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    left: -55vw;
+    transition: left 1s;
 }
 
 .main-html-css-project-picture{

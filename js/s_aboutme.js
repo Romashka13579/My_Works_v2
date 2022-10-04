@@ -195,29 +195,51 @@ function ForMousemove(e, mainMovingCard_clone, x, y) {
     mainMovingCard_clone.style.top = (e.clientY - y) + "px";
 }
 
-var hnmtlcssBtnLeft = document.querySelector('.html-css-project-btn-left');
-var hnmtlcssBtnRight = document.querySelector('.html-css-project-btn-right');
+var hnmtlcssBtnLeft = document.querySelector('.main-html-css-project-btn-1');
+var hnmtlcssBtnRight = document.querySelector('.main-html-css-project-btn-2');
 var mainHtmlCssProjectPictureOverflow = document.querySelector('.main-html-css-project-picture-overflow');
 var mainHtmlCssProjectPictureFull = document.querySelector('.main-html-css-project-picture-full');
 var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');
 
 var i_hc = 1;
-var slideId5;
-var x_hc = -1;
 
 var htmlcssFirstClone = mainHtmlCssProjectPicture[0].cloneNode(true);
 var htmlcssLastClone = mainHtmlCssProjectPicture[mainHtmlCssProjectPicture.length - 1].cloneNode(true);
 
-htmlcssFirstClone.ID = "html-css-first-clone";
-htmlcssLastClone.ID = "html-css-lest-clone";
+htmlcssFirstClone.id = "html-css-first-clone";
+htmlcssLastClone.id = "html-css-last-clone";
 
 mainHtmlCssProjectPictureFull.append(htmlcssFirstClone);
 mainHtmlCssProjectPictureFull.prepend(htmlcssLastClone);
 
+var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');
+
+mainHtmlCssProjectPictureFull.addEventListener('transitionend', () => {
+    var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');
+    if (mainHtmlCssProjectPicture[i_hc].id === "html-css-first-clone") {
+        mainHtmlCssProjectPictureFull.style.transition = "none";
+        i_hc = 1;
+        mainHtmlCssProjectPictureFull.style.left = ""+(-55 * i_hc)+"vw";
+    }
+    if (mainHtmlCssProjectPicture[i_hc].id === "html-css-last-clone") {
+        mainHtmlCssProjectPictureFull.style.transition = "none";
+        i_hc = mainHtmlCssProjectPicture.length - 2;
+        mainHtmlCssProjectPictureFull.style.left = ""+(-55 * i_hc)+"vw";
+    }
+});
+
 hnmtlcssBtnLeft.addEventListener('click', () => {
-    
+    var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');
+    if(i_hc <= 0){return;}
+    i_hc--;
+    mainHtmlCssProjectPictureFull.style.left = ""+(-55 * i_hc)+"vw";
+    mainHtmlCssProjectPictureFull.style.transition = "1s";
 });
 
 hnmtlcssBtnRight.addEventListener('click', () => {
-
+    var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');;
+    if(i_hc >=mainHtmlCssProjectPicture.length - 1){return;}
+    i_hc++;
+    mainHtmlCssProjectPictureFull.style.left = ""+(-55 * i_hc)+"vw";
+    mainHtmlCssProjectPictureFull.style.transition = "1s";
 });

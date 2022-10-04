@@ -358,9 +358,11 @@
 .html-css-picture-5{background: url(../png/groups/Rovinj-15\ 1.png) center/cover;}
 
 .main-html-css-project-picture-gradient{
+    display: flex;
     width: 55vw;
     height: 400px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 14.37%, rgba(0, 0, 0, 0.8) 100%);
+    align-items: center;
 }
 
 .main-html-css-project-btns{
@@ -392,3 +394,63 @@
     font-size: 30px;
     color: white;
 }
+
+.html-css-project-inside{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    margin: auto 100px;
+}
+
+.html-css-project-inside-txt-1{
+    width: fit-content;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: white;
+    border: 1px solid #FFFFFF;
+    padding: 8px 20px;
+}
+
+.html-css-project-inside-txt-2{
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    max-width: 500px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.html-css-project-inside-btn{
+    width: fit-content;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
+    padding: 15px 80px;
+}
+
+.main-html-css-project-block{
+    display: grid;
+    grid-template-rows: 1fr 120px;
+}
+
+.main-html-css-project-downloads{
+    display: flex;
+}
+
+.main-html-css-project-download{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+.html-css-project-download-1{background: url(../png/planet-earth.png) center/cover;}
+.html-css-project-download-2{background: url(../png/github.png) center/cover;}
+.html-css-project-download-4{background: url(../png/figma.png) center/cover;}
+.html-css-project-download-3{background: url(../png/figma\ \(2\).png) center/cover;}

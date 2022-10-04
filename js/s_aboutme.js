@@ -124,13 +124,13 @@ var movingpresesed = false;
 var movingclicked = false;
 
 mainButton.addEventListener('click', () => {
-    if(movingclicked == false){
+    if (movingclicked == false) {
         movingclicked = true;
         mainButton.style.borderColor = "#40939E";
         mainButtonInside.style.background = "#40939E";
         mainButtonInside.style.marginLeft = "3px";
     }
-    else if(movingclicked == true){
+    else if (movingclicked == true) {
         movingclicked = false;
         mainButton.style.borderColor = "#DADADA";
         mainButtonInside.style.background = "#DADADA";
@@ -140,17 +140,17 @@ mainButton.addEventListener('click', () => {
 
 mainMovingCards.forEach(mainMovingCard => {
     mainMovingCard.addEventListener('mousedown', (e) => {
-        if(movingclicked == true){
+        if (movingclicked == true) {
             movingpresesed = true;
             var x01 = e.clientX;
             var x = e.clientX - mainMovingCard.offsetLeft;
             var y = e.clientY - mainMovingCard.offsetTop;
-    
+
             var mainMovingCard_clone = mainMovingCard.cloneNode(true);
             mainMovingCard_clone.style.position = "absolute";
             mainMovingCard_clone.style.zIndex = 4;
             main.append(mainMovingCard_clone);
-    
+
             ForMousemove(e, mainMovingCard_clone, x, y);
             mainMovingCard.style.opacity = 0;
             mainMovingCard_clone.addEventListener('mousemove', (e) => {
@@ -158,35 +158,31 @@ mainMovingCards.forEach(mainMovingCard => {
                     ForMousemove(e, mainMovingCard_clone, x, y);
                 }
             });
-            mainMovingCard_clone.addEventListener('mouseup', (e) => {
-                movingpresesed = false;
-                var x1 = e.clientX;
-                var y1 = e.clientY;
-                for (let i = 0; i < mainMovingCards.length; i++) {
-                    if((x1 > mainMovingCards[i].offsetLeft && x1 < (mainMovingCards[i].offsetWidth + mainMovingCards[i].offsetLeft)) && (y1 > mainMovingCards[i].offsetTop && y1 < (mainMovingCards[i].offsetHeight + mainMovingCards[i].offsetTop))){
-                        mainMovingCard.style.opacity = 1;
-                        mainMovingCards[i].after(mainMovingCard);
-                        if(x01>x1){
-                            mainMovingCards[i].before(mainMovingCard);
-                        }
-                        else if(x01<x1){
+            document.addEventListener('mouseup', (e) => {
+                if (movingclicked == true) {
+                    movingpresesed = false;
+                    var x1 = e.clientX;
+                    var y1 = e.clientY;
+                    for (let i = 0; i < mainMovingCards.length; i++) {
+                        if ((x1 > mainMovingCards[i].offsetLeft && x1 < (mainMovingCards[i].offsetWidth + mainMovingCards[i].offsetLeft)) && (y1 > mainMovingCards[i].offsetTop && y1 < (mainMovingCards[i].offsetHeight + mainMovingCards[i].offsetTop))) {
+                            mainMovingCard.style.opacity = 1;
                             mainMovingCards[i].after(mainMovingCard);
+                            if (x01 > x1) {
+                                mainMovingCards[i].before(mainMovingCard);
+                            }
+                            else if (x01 < x1) {
+                                mainMovingCards[i].after(mainMovingCard);
+                            }
+                            mainMovingCard_clone.remove();
                         }
-                        mainMovingCard_clone.remove();
-                    }
-                    else{
-                        mainMovingCard.style.opacity = 1;
-                        mainMovingCard_clone.remove();
+                        else {
+                            mainMovingCard.style.opacity = 1;
+                            mainMovingCard_clone.remove();
+                        }
                     }
                 }
             });
         }
-        mainButton.addEventListener('click', () => {
-            if(movingclicked == false){
-                mainMovingCard.style.opacity = 1;
-                mainMovingCard_clone.remove();
-            }
-        });
     });
 });
 
@@ -219,27 +215,27 @@ mainHtmlCssProjectPictureFull.addEventListener('transitionend', () => {
     if (mainHtmlCssProjectPicture[i_hc].id === "html-css-first-clone") {
         mainHtmlCssProjectPictureFull.style.transition = "none";
         i_hc = 1;
-        mainHtmlCssProjectPictureFull.style.left = ""+(-55 * i_hc)+"vw";
+        mainHtmlCssProjectPictureFull.style.left = "" + (-55 * i_hc) + "vw";
     }
     if (mainHtmlCssProjectPicture[i_hc].id === "html-css-last-clone") {
         mainHtmlCssProjectPictureFull.style.transition = "none";
         i_hc = mainHtmlCssProjectPicture.length - 2;
-        mainHtmlCssProjectPictureFull.style.left = ""+(-55 * i_hc)+"vw";
+        mainHtmlCssProjectPictureFull.style.left = "" + (-55 * i_hc) + "vw";
     }
 });
 
 hnmtlcssBtnLeft.addEventListener('click', () => {
     var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');
-    if(i_hc <= 0){return;}
+    if (i_hc <= 0) { return; }
     i_hc--;
-    mainHtmlCssProjectPictureFull.style.left = ""+(-55 * i_hc)+"vw";
+    mainHtmlCssProjectPictureFull.style.left = "" + (-55 * i_hc) + "vw";
     mainHtmlCssProjectPictureFull.style.transition = "1s";
 });
 
 hnmtlcssBtnRight.addEventListener('click', () => {
     var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');;
-    if(i_hc >=mainHtmlCssProjectPicture.length - 1){return;}
+    if (i_hc >= mainHtmlCssProjectPicture.length - 1) { return; }
     i_hc++;
-    mainHtmlCssProjectPictureFull.style.left = ""+(-55 * i_hc)+"vw";
+    mainHtmlCssProjectPictureFull.style.left = "" + (-55 * i_hc) + "vw";
     mainHtmlCssProjectPictureFull.style.transition = "1s";
 });

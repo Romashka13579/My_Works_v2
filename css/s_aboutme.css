@@ -395,6 +395,34 @@
     color: white;
 }
 
+.main-html-css-project input{
+    display: none;
+}
+
+.main-html-css-project-btns-small{
+    display: flex;
+    width: 85px;
+    margin-top: auto;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.btn-small{
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: background 500ms;
+}
+
+#html-css-project-radio-1:checked ~ .main-html-css-project-picture-overflow .main-html-css-project-btns label:nth-child(1),
+#html-css-project-radio-2:checked ~ .main-html-css-project-picture-overflow .main-html-css-project-btns label:nth-child(2),
+#html-css-project-radio-3:checked ~ .main-html-css-project-picture-overflow .main-html-css-project-btns label:nth-child(3),
+#html-css-project-radio-4:checked ~ .main-html-css-project-picture-overflow .main-html-css-project-btns label:nth-child(4),
+#html-css-project-radio-5:checked ~ .main-html-css-project-picture-overflow .main-html-css-project-btns label:nth-child(5){
+    background: white;
+}
+
 .html-css-project-inside{
     display: flex;
     gap: 20px;

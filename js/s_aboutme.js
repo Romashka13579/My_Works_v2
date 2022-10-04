@@ -196,6 +196,8 @@ var hnmtlcssBtnRight = document.querySelector('.main-html-css-project-btn-2');
 var mainHtmlCssProjectPictureOverflow = document.querySelector('.main-html-css-project-picture-overflow');
 var mainHtmlCssProjectPictureFull = document.querySelector('.main-html-css-project-picture-full');
 var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');
+var htmlCssProjectRadio = document.querySelectorAll('.html-css-project-radio');
+var btnsSmall = document.querySelectorAll('.btn-small');
 
 var i_hc = 1;
 
@@ -225,17 +227,41 @@ mainHtmlCssProjectPictureFull.addEventListener('transitionend', () => {
 });
 
 hnmtlcssBtnLeft.addEventListener('click', () => {
-    var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');
     if (i_hc <= 0) { return; }
     i_hc--;
+    if(i_hc > 0){
+        htmlCssProjectRadio[i_hc-1].checked = true;
+    }
+    else{
+        htmlCssProjectRadio[mainHtmlCssProjectPicture.length - 3].checked = true;
+    }
     mainHtmlCssProjectPictureFull.style.left = "" + (-55 * i_hc) + "vw";
     mainHtmlCssProjectPictureFull.style.transition = "1s";
 });
 
 hnmtlcssBtnRight.addEventListener('click', () => {
-    var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');;
+    var mainHtmlCssProjectPicture = document.querySelectorAll('.main-html-css-project-picture');
     if (i_hc >= mainHtmlCssProjectPicture.length - 1) { return; }
     i_hc++;
+    if(i_hc < mainHtmlCssProjectPicture.length - 1){
+        htmlCssProjectRadio[i_hc-1].checked = true;
+    }
+    else{
+        htmlCssProjectRadio[0].checked = true;
+    }
     mainHtmlCssProjectPictureFull.style.left = "" + (-55 * i_hc) + "vw";
     mainHtmlCssProjectPictureFull.style.transition = "1s";
+});
+
+btnsSmall.forEach(btnSmall => {
+    btnSmall.addEventListener('click', () => {
+        for (let k = 0; k < btnsSmall.length; k++) {
+            if(btnSmall == btnsSmall[k]){
+                var k1 = k;
+            }
+        }
+        i_hc = k1+1;
+        mainHtmlCssProjectPictureFull.style.left = "" + (-55 * i_hc) + "vw";
+        mainHtmlCssProjectPictureFull.style.transition = "1s";
+    });
 });

@@ -53,7 +53,6 @@
     -moz-box-shadow: 4px 4px 6px -4px rgba(0, 0, 0, 0.2);
     box-shadow: 4px 4px 6px -4px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    z-index: 4;
 }
 
 .moving-card-1-flags-overflow{
@@ -298,4 +297,29 @@
     font-size: 18px;
     font-family: 'Inter';
     font-weight: 500;
+}
+
+.main-arduino-downloads-links{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main-arduino-downloads-link{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+.downloads-link-1{background: url(../png/word.png) center/cover;}
+.downloads-link-2{background: url(../png/microsoft-powerpoint.png) center/cover;}
+.downloads-link-3{background: url(../png/microsoft-powerpoint.png) center/cover;}
+.downloads-link-4{background: url(../png/microsoft-powerpoint.png) center/cover;}
+
+.fa-download{
+    position: absolute;
+    font-size: 30px;
+    bottom: 0px;
+    right: 0px;
+    color: #6e6e6e;
 }

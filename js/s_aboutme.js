@@ -148,6 +148,7 @@ mainMovingCards.forEach(mainMovingCard => {
     
             var mainMovingCard_clone = mainMovingCard.cloneNode(true);
             mainMovingCard_clone.style.position = "absolute";
+            mainMovingCard_clone.style.zIndex = 4;
             main.append(mainMovingCard_clone);
     
             ForMousemove(e, mainMovingCard_clone, x, y);
@@ -193,3 +194,11 @@ function ForMousemove(e, mainMovingCard_clone, x, y) {
     mainMovingCard_clone.style.left = (e.clientX - x) + "px";
     mainMovingCard_clone.style.top = (e.clientY - y) + "px";
 }
+
+var mainArduinoDownloadsLinks = document.querySelectorAll('.main-arduino-downloads-link');
+
+mainArduinoDownloadsLinks.forEach(mainArduinoDownloadsLink => {
+    mainArduinoDownloadsLink.addEventListener('click', () => {
+
+    });
+});

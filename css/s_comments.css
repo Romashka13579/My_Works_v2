@@ -1,35 +1,84 @@
+button{
+    cursor: pointer;
+}
+
 .main-comments-textbar{
     margin: 0px 100px;
     padding: 10px 30px;
     border: 2px solid rgb(114, 114, 114);
     outline: none;
-    font-size: 20px;
+    font-size: 24px;
     background: #dadadaaf;
     color: rgb(56, 56, 56);
     border-radius: 100px;
     transition: background 200ms;
 }
 
-.main-comments-textbar::placeholder{color: rgb(56, 56, 56);}
+.main-comments-textbar::placeholder{color: rgb(108, 108, 108);}
 .main-comments-textbar:hover{background: #dadadad3;}
 .main-comments-textbar:focus{background: #dadada;}
 
 .main-comments-textbar-btn{
     position: absolute;
-    margin-top: 10px;
-    right: 160px;
+    margin-top: 11.5px;
+    right: 166px;
     background: none;
     outline: none;
     border: none;
     padding: 0px;
 }
 
-.fa-share{
+.fa-square-plus{
     font-size: 30px;
     color: rgb(114, 114, 114);
     transition: color 200ms;
 }
 
-.main-comments-textbar-btn:focus > .fa-share{
+.main-comments-textbar-btn:active > .fa-square-plus{
+    color: rgb(56, 56, 56);
+}
+
+.comments-block{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-block{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 10px 20px 4px 20px;
+    border: 2px solid rgb(148, 148, 148);
+    background: #c0c0c0;
+    border-radius: 20px;
+    gap: 5px;
+}
+
+.comment-block-txt{
+    font-family: 'Inter';
+    font-size: 17px;
+    color: rgb(56, 56, 56);
+}
+
+.comment-block-txt-btns{
+    width: fit-content;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.share-in-btn{
+    font-size: 14px;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0px;
+    color: rgb(96, 96, 96);
+    transition: color 250ms;
+}
+
+.share-in-btn:focus{
     color: rgb(56, 56, 56);
 }

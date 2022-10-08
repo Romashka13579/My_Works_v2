@@ -359,7 +359,7 @@ body{
 
 .main-block-bottom-cplus{
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 }
 
 .main-block-bottom-csharp{

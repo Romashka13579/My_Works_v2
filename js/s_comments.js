@@ -17,6 +17,16 @@ mainCommentsTextbarBtn.addEventListener('click', () => {
         CommentsArray(commentsBlocks1);
     }
 });
+mainCommentsTextbar.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter' && mainCommentsTextbar.value != ""){
+        var clone = commentBlock1.cloneNode(true);
+        clone.querySelector('.comment-block-txt').innerHTML = mainCommentsTextbar.value;
+        commentsBlock.append(clone);
+        mainCommentsTextbar.value = "";
+        var commentsBlocks1 = document.querySelectorAll('.comment-block-1');
+        CommentsArray(commentsBlocks1);
+    }
+});
 
 function CommentsArray(array){
     array.forEach(arrayelement => {
@@ -38,22 +48,22 @@ function CommentsArray(array){
                 }
             });
         });
-        arrayelement.querySelector('.fa-share').addEventListener('click', () => {
-            var arrayelement_clone = arrayelement.cloneNode(true);
-            if(parseInt(arrayelement.style.marginLeft) > 0){
-                arrayelement_clone.style.marginLeft = ""+(parseInt(arrayelement.style.marginLeft)+30)+ "px";
-                console.log(arrayelement.style.marginLeft);
-            }
-            else{
-                arrayelement_clone.style.marginLeft = "30px";
-                console.log("a");
-            }
-            arrayelement_clone.querySelector('.comment-block-txt').style.display = "none";
-            arrayelement_clone.querySelector('.comment-block-txt').innerHTML = "";
-            arrayelement_clone.querySelector('.comment-block-txt-in-change').style.display = "block";
-            arrayelement.after(arrayelement_clone);
-            var commentsBlocks1 = document.querySelectorAll('.comment-block-1');
-            CommentsArray(commentsBlocks1);
-        });
+        // arrayelement.querySelector('.fa-share').addEventListener('click', () => {
+        //     var arrayelement_clone = arrayelement.cloneNode(true);
+        //     if(parseInt(arrayelement.style.marginLeft) > 0){
+        //         arrayelement_clone.style.marginLeft = ""+(parseInt(arrayelement.style.marginLeft)+30)+ "px";
+        //         console.log(arrayelement.style.marginLeft);
+        //     }
+        //     else{
+        //         arrayelement_clone.style.marginLeft = "30px";
+        //         console.log("a");
+        //     }
+        //     arrayelement_clone.querySelector('.comment-block-txt').style.display = "none";
+        //     arrayelement_clone.querySelector('.comment-block-txt').innerHTML = "";
+        //     arrayelement_clone.querySelector('.comment-block-txt-in-change').style.display = "block";
+        //     arrayelement.after(arrayelement_clone);
+        //     var commentsBlocks1 = document.querySelectorAll('.comment-block-1');
+        //     CommentsArray(commentsBlocks1);
+        // });
     });
 }

@@ -486,22 +486,29 @@
 .main-music-center{
     display: grid;
     grid-template-columns: 6fr 4fr;
-    height: 400px;
+    height: 460px;
 }
 
 .main-music-blocks{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     justify-content: space-around;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: auto auto auto;
+}
+
+.main-music-block-overflow{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
 }
 
 .main-music-block{
     width: 150px;
     height: 150px;
     margin: auto;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
 }
 
 .music-block-1{background: url(../png/music/three-days-grace.jpg) center/cover;}
@@ -510,3 +517,11 @@
 .music-block-4{background: url(../png/music/linkin-park.jpg) center/cover;}
 .music-block-5{background: url(../png/music/thousand-foot-crutch.jfif) center/cover;}
 .music-block-6{background: url(../png/music/seether.jpg) center/cover;}
+
+.main-music-block-text{
+    font-size: 26px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+}

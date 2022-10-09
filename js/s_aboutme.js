@@ -148,3 +148,27 @@ btnsSmall.forEach(btnSmall => {
         mainHtmlCssProjectPictureFull.style.transition = "1s";
     });
 });
+
+var mainMusicBlockOverflows = document.querySelectorAll('.main-music-block-overflow');
+
+mainMusicBlockOverflows.forEach(mainMusicBlockOverflow => {
+    mainMusicBlockOverflow.addEventListener('mouseenter', () => {
+        var mainMusicBlockText = mainMusicBlockOverflow.querySelector('.main-music-block-text');
+        console.log("a");
+        mainMusicBlockText.style.display = "block";
+        setInterval(() => {
+            mainMusicBlockText.style.top = "0px";
+        }, 10);
+    });
+    mainMusicBlockOverflow.addEventListener('mouseout', () => {
+        var mainMusicBlockText = mainMusicBlockOverflow.querySelector('.main-music-block-text');
+        console.log("b");
+        mainMusicBlockText.style.top = "-100px";
+        mainMusicBlockText.addEventListener('transitionend', () => {
+            if (mainMusicBlockText.style.top == "-100px") {
+                mainMusicBlockText.style.display = "none";
+                console.log("a");
+            }
+        })
+    });
+});

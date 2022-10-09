@@ -482,3 +482,31 @@
 .html-css-project-download-2{background: url(../png/github.png) center/cover;}
 .html-css-project-download-4{background: url(../png/figma.png) center/cover;}
 .html-css-project-download-3{background: url(../png/figma\ \(2\).png) center/cover;}
+
+.main-music-center{
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    height: 400px;
+}
+
+.main-music-blocks{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: space-around;
+}
+
+.main-music-block{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.music-block-1{background: url(../png/music/three-days-grace.jpg) center/cover;}
+.music-block-2{background: url(../png/music/thirty-seconds-to-mars.jfif) center/cover;}
+.music-block-3{background: url(../png/music/falling-in-reverse.jfif) center/cover;}
+.music-block-4{background: url(../png/music/linkin-park.jpg) center/cover;}
+.music-block-5{background: url(../png/music/thousand-foot-crutch.jfif) center/cover;}
+.music-block-6{background: url(../png/music/seether.jpg) center/cover;}

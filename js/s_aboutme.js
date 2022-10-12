@@ -150,7 +150,10 @@ btnsSmall.forEach(btnSmall => {
 });
 
 function HtmlCssProjectLeft(obj, main){
-    if(main.offsetWidth<=1210){
+    if(main.offsetWidth<=600){
+        obj.style.left = "" + (-70 * i_hc) + "vw";
+    }
+    else if(main.offsetWidth<=1210){
         obj.style.left = "" + (-80 * i_hc) + "vw";
     }
     else{

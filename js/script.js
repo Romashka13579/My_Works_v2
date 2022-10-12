@@ -69,17 +69,24 @@ headerBotBtn.addEventListener('click', () => {
         headerBottomOverflow.style.display = "block";
         setTimeout(() => {
             main.style.transition = "padding 750ms";
-            main.style.paddingTop = "192px"
-            headerBottomOverflow.style.height = "80px";
+            if(main.offsetWidth <= 403){main.style.paddingTop = "374px"}
+            else if(main.offsetWidth <= 527){main.style.paddingTop = "314px"}
+            else if(main.offsetWidth <= 663){main.style.paddingTop = "252px"}
+            else{main.style.paddingTop = "192px"}
+            if(main.offsetWidth <= 527){headerBottomOverflow.style.height = "142px";}
+            else{headerBottomOverflow.style.height = "80px";}
             headerBottom.style.top = "0px";
         }, 10);
     }
     else if (headerclicked == 0) {
         headerclicked = 1;
         main.style.transition = "padding 750ms";
-        main.style.paddingTop = "110px"
+        if(main.offsetWidth <= 403){main.style.paddingTop = "230px"}
+        else if(main.offsetWidth <= 663){main.style.paddingTop = "170px"}
+        else{main.style.paddingTop = "110px"}
         faArrowUp.style.transform = "matrix(-1.00,0.00,-0.00,-1.00,0,0)";
-        headerBottom.style.top = "-80px";
+        if(main.offsetWidth <= 527){headerBottom.style.top = "-142px";}
+        else{headerBottom.style.top = "-80px";}
         headerBottomOverflow.style.height = "0px";
     }
 });

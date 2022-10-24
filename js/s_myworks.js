@@ -161,9 +161,9 @@ for(var d = JsNameArray.length-1; d >=0; d--){
 
 var mainBlockBottomCplus = document.querySelector('.main-block-bottom-cplus');
 var mainBlockBottomCard = mainBlockBottomCplus.querySelector('.main-block-bottom-card');
-var CplusNameArray = ['Tin Ker Cad', 'Matrix Max', 'Seven Segm.', 'Arduino Proj.', 'Arduino Other', 'Qt 1 Creator', 'Qt 2 Creator', 'Qt 3 Creator', 'Qt 4 Creator', 'Qt 5 Creator'];
-var CplusBackArray = ['CPLUS_TINKERCAD.png', 'CPLUS_2.jfif', 'CPLUS_3.png', 'CPLUS_4', 'CPLUS_5.png!d', 'CPLUS_6.png', 'CPLUS_6.png', 'CPLUS_6.png', 'CPLUS_6.png', 'CPLUS_6.png'];
-var CplusLinkArray = ['Arduino_MatrixMax', 'Arduino_MatrixMax', 'Arduino_Seven-segment-indicator', 'Arduino_Project', 'Arduino_Other', 'QtCreator_1', 'QtCreator_2', 'QtCreator_3', 'QtCreator_4', 'QtCreator_5'];
+var CplusNameArray = ['Tin Ker Cad', 'Matrix Max', 'Seven Segm.', 'Arduino Proj.', 'Arduino Other', 'Qt 1 Creator', 'Qt 2 Creator', 'Qt 3 Creator', 'Qt 4 Creator', 'Qt 5 Creator', 'Qt 6 Creator', 'Qt Calculator'];
+var CplusBackArray = ['CPLUS_TINKERCAD.png', 'CPLUS_2.jfif', 'CPLUS_3.png', 'CPLUS_4', 'CPLUS_5.png!d', 'CPLUS_6.png', 'CPLUS_6.png', 'CPLUS_6.png', 'CPLUS_6.png', 'CPLUS_6.png', 'CPLUS_6.png', 'CPLUS_7'];
+var CplusLinkArray = ['Arduino_MatrixMax', 'Arduino_MatrixMax', 'Arduino_Seven-segment-indicator', 'Arduino_Project', 'Arduino_Other', 'QtCreator_1', 'QtCreator_2', 'QtCreator_3', 'QtCreator_4', 'QtCreator_5', 'QtCreator_6', 'QtCreator_Calculator'];
 
 for(var d = CplusNameArray.length-1; d >=0; d--){
     var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);

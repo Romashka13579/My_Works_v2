@@ -346,7 +346,7 @@ body{
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-auto-flow: column;
     gap: 35px;
     background: #EAEAEA;
@@ -624,7 +624,7 @@ body{
     }
     .main-block-bottom-js{
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(15, 1fr);
+        grid-template-rows: repeat(16, 1fr);
     }
     .main-block-bottom-cplus {
         grid-template-columns: repeat(1, 1fr);

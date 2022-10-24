@@ -144,9 +144,9 @@ for(var d = CssNameArray.length-1; d >=0; d--){
 
 var mainBlockBottomJs = document.querySelector('.main-block-bottom-js');
 var mainBlockBottomCard = mainBlockBottomJs.querySelector('.main-block-bottom-card');
-var JsNameArray = ['Info / Date', 'Console Timer', 'Clock', 'Light', 'Range Input', 'Blank', 'Calcul', 'Slider', 'Statistic', 'Puncts', 'Card hover', 'Cards position', 'Mp3 player', 'Drop menu'];
-var JsBackArray = ['JS_2.png', 'JS_3.webp', 'JS_4.webp', 'JS_5.webp', 'JS_2.png', 'JS_2.png', 'JS_8.jpg', 'JS_9.png', 'JS_10.png', 'JS_2.png', 'JS_11.png', 'JS_12.jfif', 'JS_2.png', 'JS_14.png'];
-var JsLinkArray = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '10.1', '11', '12', '13', '14'];
+var JsNameArray = ['Info / Date', 'Console Timer', 'Clock', 'Light', 'Range Input', 'Blank', 'Calcul', 'Slider', 'Statistic', 'Puncts', 'Card hover', 'Cards position', 'Mp3 player', 'Drop menu', 'Paint (copy)'];
+var JsBackArray = ['JS_2.png', 'JS_3.webp', 'JS_4.webp', 'JS_5.webp', 'JS_2.png', 'JS_2.png', 'JS_8.jpg', 'JS_9.png', 'JS_10.png', 'JS_2.png', 'JS_11.png', 'JS_12.jfif', 'JS_2.png', 'JS_14.png', 'JS_15.webp'];
+var JsLinkArray = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '10.1', '11', '12', '13', '14', '15'];
 
 for(var d = JsNameArray.length-1; d >=0; d--){
     var mainBlockBottomCard_clone = mainBlockBottomCard.cloneNode(true);
